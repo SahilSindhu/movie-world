@@ -1,6 +1,7 @@
 @import './reset.css';
 .movie__list{
     display: flex;
+    justify-content: space-around;
 }
 .movie-card{
     width: 23%;
@@ -10,10 +11,10 @@
     display: flex;
 }
 .movie-details--left{
-    width : 70%; 
+    width : 65%; 
 }
 .movie-details--right{
-    width: 30%;
+    width: 35%;
 }
 
 
