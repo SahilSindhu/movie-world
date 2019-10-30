@@ -1,0 +1,47 @@
+@import './variable.css';
+.menu{
+    display: flex;
+    background: var(--header-background-color);
+    color: white;
+    height: 50px;
+    font-family: var(--primary-font-family);
+    align-items: center;
+    box-sizing: border-box;
+    padding:20px;
+    justify-content: space-between;
+}
+
+.logo{
+    font-size: var(--medium-font-size);
+}
+
+.menu__list{
+    display: flex;
+    padding: 0 20px;
+}
+
+.menu__item{
+    padding: 16px 50px;
+    outline: none;
+}
+
+.menu__item.active{
+    background: black;
+}
+
+.menu__item--link{
+    color: white;
+}
+
+.menu__item--link:active{
+    outline: none;
+}
+
+
+/*for devices greater than 767px*/
+
+@media screen and (min-width:768px){
+    .menu{
+        justify-content: flex-start;
+    }
+}

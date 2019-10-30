@@ -9,21 +9,30 @@
     <title>Movie-World</title>
 </head>
 <body>
-    <header></header>
-    <main id='main' class="movie-container main">
+    <header>
+            <nav class="menu">
+                <section class="logo">Movie App</section>
+                <ul class="menu__list" role="menu">
+                    <li class="menu__item active"><a href="#" tabindex="1" class="menu__item--link">Home</a></li>
+                    <li class="menu__item"><a href="#" tabindex="2" class="menu__item--link">Explore</a></li>
+                </ul>
+            </nav>
+    </header>
 
-        <article class="movie-row latest">
-            <h3>Latest</h3>
+    <main id='main' class="movie-container main">
+        <!--movie__list data will be added dynamicly-->
+        <article class="movie__row latest">
+            <h3 class="movie__row__heading">Latest</h3>
             <section class="latest__list movie__list"></section>
         </article>
 
-        <article class="movie-row trending">
-            <h3>Trending</h3>
+        <article class="movie__row trending">
+            <h3 class="movie__row__heading">Trending</h3>
             <section class="trending__list movie__list"></section>
         </article>
 
-        <article class="movie-row mostwatched">
-            <h3>Most Watched</h3>
+        <article class="movie__row mostwatched">
+            <h3 class="movie__row__heading">Most Watched</h3>
             <section class="mostwatched__list movie__list"></section>
         </article>
 

@@ -1,6 +1,5 @@
-
 import { getGenres,getLatestData,getTrendingData,getPopularData } from './api.js';
-import { createRow } from './dom.js';
+import { createRow } from './movie-row.js';
 
 (function(){
         //create a array to hold all the server returned data
@@ -17,9 +16,7 @@ import { createRow } from './dom.js';
         //initiate the data fetching and pass data to createRow function 
         async function hero(){
             await getData();
-
             movieData.forEach((ele,idx)=>{
-                console.log(movieData,idx);
                 createRow(ele.results,idx,genre.genres);
             })
         }
