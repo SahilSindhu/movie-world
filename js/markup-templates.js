@@ -1,42 +1,29 @@
-
-/* return card in string litral markup form :: args=name of movie, rating of movie,
-                                               genre of movie, and image path
-*/
-function cardMarkup(moviename,movierating,moviegenre,movieimg){
-    let bestTwoGenre = [];
+import {ratingStarTemplate} from './common/rating-star.js';
+ function cardMarkup(moviename,movierating,moviegenre,movieimg,movieId) {
     
-    //two show only two genre of movie on home page
-    if(moviegenre.length>2){
-        bestTwoGenre.push(moviegenre[0]);
-        bestTwoGenre.push(moviegenre[1]);
-    }
+    let template = document.getElementById("latest-movies");
+    let movieCard = template.content.querySelector(".movie-card");
+    let node = document.importNode(movieCard, true);
+    //let star_rating = template.content.querySelectorAll(".movie__rating .star-rating");
 
-    let cardhtml = 
-        `
-            <section class='movie-card'>
-                <figure class='movie__figure'>
-                    <img class='movie__figure__poster' src=${movieimg}>
-                </figure>
-                <div class='movie-details'>
-                    <section class='movie-details--left movie-details--inner'>
-                        <p class='movie__name'>${moviename}</p>
-                        <p class='movie__genre'>${bestTwoGenre}</p>
-                        <span class='movie__rating'>
-                                <i class="fa ${movierating >=1 ?'fa-star' :'fa-star-o'} star-rating"></i>
-                                <i class="fa ${movierating >=2 ?'fa-star' :'fa-star-o'} star-rating"></i>
-                                <i class="fa ${movierating >=3 ?'fa-star' :'fa-star-o'} star-rating"></i>
-                                <i class="fa ${movierating >=4 ?'fa-star' :'fa-star-o'} star-rating"></i>
-                                <i class="fa ${movierating >=5 ?'fa-star' :'fa-star-o'} star-rating"></i>
-                        </span>
-                    </section>
-                    <section class='movie-details--right movie-details--inner'>
-                        <p class='movie__heart'><i class='fa fa-heart-o'></i></p>
-                        <p class='movie__showmore-link'><a href='#'>show more</a></p> 
-                    </section>
-                </div>
-            </section>
-        `
-    return cardhtml;
-}
+    let figure = node.querySelector('.movie__figure__poster');
+    let title = node.querySelector('.movie__name');
+    let genre = node.querySelector('.movie__genre');
+    let show_more_link = node.querySelector('.movie__showmore-link a');
+
+    figure.setAttribute("src", movieimg);
+    figure.setAttribute("alt", moviename);
+    figure.setAttribute("title", moviename);
+    show_more_link.setAttribute('href',`movie-details.html?id=${movieId}`);
+    title.appendChild(document.createTextNode(moviename));
+    genre.appendChild(document.createTextNode(moviegenre[0] +" " + moviegenre[1]));
+  
+    const ratingNode = node.querySelector('.movie__ratingStars span');
+    console.log(movierating)
+    ratingNode.innerHTML = ratingStarTemplate(movierating);
+     return node;
+  }
+  
+
 
 export {cardMarkup}

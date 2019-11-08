@@ -12,11 +12,27 @@ export function createRow(rowData,idx,genre){
         if(index<=3){
             createMovieCard(ele,idx,movieGenreName)
         }
-       
     });
 }
 
+/*
+    use cardMarkup function to create movie card and then append the return value in dom
+*/
+function  createMovieCard(singleMovie,idx,movieGenreName){
+    let rating = Math.floor(singleMovie.vote_average/2);
+    let x =cardMarkup(singleMovie.title,rating,movieGenreName,`${POSTER_PATH_PREFIX}/${singleMovie.poster_path}`,singleMovie.id);
+    
+    switch(idx){
+        case 1:document.querySelector('.latest__list').insertAdjacentElement('beforeend',x);
+                break;
+        case 2:document.querySelector('.trending__list').insertAdjacentElement('beforeend',x);
+                 break;
+        case 3:document.querySelector('.mostwatched__list').insertAdjacentElement('beforeend',x);
+                break;
+    }
 
+    
+}
 /*
     we get the genre of our movie by using genre id and matching it to all
     genre list
@@ -31,32 +47,5 @@ function getGenre(movieGenreId, allGenere){
         })
     })
     return movieGenreName;
-}
-
-
-/*
-    use cardMarkup function to create movie card and then append the return value in dom
-*/
-function  createMovieCard(singleMovie,idx,movieGenreName){
-    let rating = calculateRating(singleMovie.popularity);
-    let x =cardMarkup(singleMovie.title,rating,movieGenreName,`${POSTER_PATH_PREFIX}/${singleMovie.poster_path}`);
-    console.log(idx)
-    switch(idx){
-        case 0:document.querySelector('.latest__list').insertAdjacentHTML('beforeend',x);
-                break;
-        case 1:document.querySelector('.trending__list').insertAdjacentHTML('beforeend',x);
-                 break;
-        case 2:document.querySelector('.mostwatched__list').insertAdjacentHTML('beforeend',x);
-                break;
-    }
-    document.querySelectorAll('.fa-star')
-    
-}
-
-
-/*change the rating value from 1-500 to 1-5 */
-function calculateRating(popularity){
-    let rating = Math.ceil(popularity/100);
-    return rating;
 }
 

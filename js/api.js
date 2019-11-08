@@ -31,6 +31,17 @@ async function getPopularData(){
     return popularData;
 }
 
+async function getMovieDetails(movie_id){
+    let movie_details = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${API_KEY}&language=en-US&append_to_response=credits`);
+    movie_details = movie_details.json();
+    return movie_details;
+}
 
-export {getGenres,getLatestData,getTrendingData,getPopularData};
+async function getSimilarMovieDetails(movie_id){
+    let movie_details = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}/similar?api_key=${API_KEY}&language=en-US&page=1`);
+    movie_details = movie_details.json();
+    return movie_details;
+}
+
+export {getGenres,getLatestData,getTrendingData,getPopularData,getMovieDetails,getSimilarMovieDetails};
 

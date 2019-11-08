@@ -1,26 +1,38 @@
 import { getGenres,getLatestData,getTrendingData,getPopularData } from './api.js';
 import { createRow } from './movie-row.js';
+import { movieQuickView } from './quick-view.js';
 
 (function(){
-        //create a array to hold all the server returned data
-        let movieData = [];
-        let genre;
-        //fetch the data and push into the moviedata array
-        async function getData(){
-            genre = await getGenres();
-            movieData.push(await getLatestData());
-            movieData.push(await getTrendingData());
-            movieData.push(await getPopularData());
-        }
+    //create a array to hold all the server returned data
+    let movieData = [];
+    let genre;
+    
+    //initiate the data fetching and pass data to createRow function 
+    function fetchMovieData(){
+        let basic_api = [getGenres,getLatestData,getTrendingData,getPopularData];
+        basic_api.forEach((ele,idx)=>{
+            if(idx == 0){
+                ele().then(res =>{
+                    movieData[idx] =res;
+                    genre = res;
+                })
+            }
+            else{
+                ele().then((res,err)=>{
+                    movieData[idx] =res;
+                    createRow(res.results,idx,genre.genres);
+                })
+            }
+        })
+    }
+    fetchMovieData();
 
-        //initiate the data fetching and pass data to createRow function 
-        async function hero(){
-            await getData();
-            movieData.forEach((ele,idx)=>{
-                createRow(ele.results,idx,genre.genres);
-            })
-        }
-        hero();
+    /* 
+    apply listeners for quickview overlay and implements functionality
+    to get moviedata data using voie id
+    */
+    movieQuickView(movieData);
+
 })();
 
 

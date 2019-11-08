@@ -13,8 +13,8 @@
             <nav class="menu">
                 <section class="logo">Movie App</section>
                 <ul class="menu__list" role="menu">
-                    <li class="menu__item active"><a href="#" tabindex="1" class="menu__item--link">Home</a></li>
-                    <li class="menu__item"><a href="#" tabindex="2" class="menu__item--link">Explore</a></li>
+                    <li class="menu__item menu__item--active"><a href="#" tabindex="1" class="menu__link">Home</a></li>
+                    <li class="menu__item"><a href="#" tabindex="2" class="menu__link">Explore</a></li>
                 </ul>
             </nav>
     </header>
@@ -35,6 +35,105 @@
             <h3 class="movie__row__heading">Most Watched</h3>
             <section class="mostwatched__list movie__list"></section>
         </article>
+
+
+        <div id="movie__modal" class="modal">
+
+            <!-- Modal content -->
+            <article class="modal__content">
+                <section class="modal__header">
+                    <h2 class="primary-text modal__title"></h2>
+                    <span class="modal__close">&times;</span>
+                </section>
+    
+                <section class="modal__body">
+                    <div class="modal__desc">
+                        <figure class="movie__image" id="modal">
+                            <img src="http://placehold.jp/190x190.png" alt="" title="">
+                        </figure>
+                        <div class="movie__content">
+                            <p class="movie__overview">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                been
+                                the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                                galley
+                                of type and scrambled it to make a type specimen book. It has survived not only five
+                                centuries,
+                                but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                                popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                                passages,
+                                and more recently with desktop publishing software like Aldus PageMaker including versions
+                                of
+                                Lorem Ipsum.</p>
+                        </div>
+                    </div>
+                    <div class="modal__details">
+                        <table class="table modal__table">
+                            <tbody class="table__body">
+                                <tr class="modal__genre">
+                                    <th>
+                                        genre
+                                    </th>
+                                    <td>
+                                        Action,Adventure
+                                    </td>
+                                </tr>
+                                <tr class="modal__cast">
+                                    <th>
+                                        Cast
+                                    </th>
+                                    <td>
+                                        prabhas,tamama,anushka shetty
+                                    </td>
+                                </tr>
+                                <tr class="modal__director">
+                                    <th>
+                                        Director
+                                    </th>
+                                    <td>
+                                        S.S Rajmouli
+                                    </td>
+                                </tr>
+                                <tr class="modal__rating">
+                                    <th>
+                                        Movie Rating
+                                    </th>
+                                    <td>
+                                        <div class="modal__rating-stars">
+                                            <span class="fa fa-star-o"></span>
+                                            <span class="fa fa-star-o"></span>
+                                            <span class="fa fa-star-o"></span>
+                                            <span class="fa fa-star-o"></span>
+                                            <span class="fa fa-star-o"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </article>
+        </div>
+
+        <template id="latest-movies">
+            <section class='movie-card'>
+                <figure class='movie__figure'>
+                    <img class='movie__figure__poster' src=${movieimg}>
+                </figure>
+                <div class='movie-details'>
+                    <section class='movie-details--left movie-details--inner'>
+                        <p class='movie__name'></p>
+                        <p class='movie__genre'></p>
+                        <div class="movie__ratingStars">
+                            <span></span>
+                        </div>
+                    </section>
+                    <section class='movie-details--right movie-details--inner'>
+                        <p class='movie__heart'><i class='fa fa-heart-o'></i></p>
+                        <p class='movie__showmore-link'><a>show more</a></p> 
+                    </section>
+                </div>
+            </section>
+        </template>
 
     </main>
    

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="All latest and trending movies list ">
+    <meta name="keywords" content="hollywood movies, action movies , romantic movies, movies">
+    <meta name="author" content="Sahil Chhabra">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/main.css" rel="stylesheet">
+    <title>Movies World</title>
+</head>
+
+<body>
+    <main class="movies">
+        <header class="menu">
+            <section class="container-fluid">
+                <nav class="primary__navigation">
+                    <h1 class="logo"><a href="index.html" tabindex="0" class="logo--link">Movie App</a></h1>
+                    <ul class="menu__items">
+                        <li class="menu__item"><a href="index.html" tabindex="1" class="menu--link">Home</a>
+                        </li>
+                        <li class="menu__item"><a href="JavaScript:Void(0);" tabindex="2" class="menu--link">Explore</a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+        </header>
+        <div id="main-details">
+            <template id="details">
+                <div>
+                    <section class="full__banner">
+                        <figure>
+                            <img src="" alt="" title="" class="movie__poster">
+                        </figure>
+                    </section>
+
+                    <section class="movie__details">
+                        <div class="container movie__layout">
+                            <article class="movie__desc">
+                                <h2 class="primary-text"></h2>
+                                <p class="para-text"></p>
+                            </article>
+                            <aside class="movie__info">
+                                <table class="table">
+                                    <tbody class="table__body">
+                                        <tr class="genre__data">
+                                            <th>
+                                                genre
+                                            </th>
+                                            <td>
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr class="cast__data">
+                                            <th>
+                                                Cast
+                                            </th>
+                                            <td>
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Director
+                                            </th>
+                                            <td>
+                                                S.S Rajmouli
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Movie Rating
+                                            </th>
+                                            <td>
+                                                <div class="movie__ratingStars">
+                                                    <span></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </aside>
+                        </div>
+                    </section>
+                </div>
+            </template>
+            </div>
+    
+
+
+        <article class="movie__row related-movies">
+            <h3 class="movie__row__heading">Most Watched</h3>
+            <section class="related__list movie__list"></section>
+        </article>
+
+        <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+        <template id="latest-movies">
+            <section class='movie-card'>
+                <figure class='movie__figure'>
+                    <img class='movie__figure__poster' src=${movieimg}>
+                </figure>
+                <div class='movie-details'>
+                    <section class='movie-details--left movie-details--inner'>
+                        <p class='movie__name'></p>
+                        <p class='movie__genre'></p>
+                        <div class="movie__ratingStars">
+                            <span></span>
+                        </div>
+                    </section>
+                    <section class='movie-details--right movie-details--inner'>
+                        <p class='movie__heart'><i class='fa fa-heart-o'></i></p>
+                        <p class='movie__showmore-link'><a>show more</a></p> 
+                    </section>
+                </div>
+            </section>
+        </template>
+
+
+
+
+    </main>
+
+
+</body>
+<script src="js/movie-details.js" type="module"></script>
+
+</html>

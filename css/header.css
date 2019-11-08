@@ -25,15 +25,15 @@
     outline: none;
 }
 
-.menu__item.active{
+.menu__item--active{
     background: black;
 }
 
-.menu__item--link{
+.menu__link{
     color: white;
 }
 
-.menu__item--link:active{
+.menu__link:active{
     outline: none;
 }
 
