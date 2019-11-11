@@ -10,7 +10,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="css/details-page.css" rel="stylesheet">
     <title>Movies World</title>
 </head>
 
@@ -18,7 +18,11 @@
     <main class="movies">
         <header>
             <nav class="menu">
-                <section class="logo">Movie App</section>
+                <section class="logo">
+                        <h1>
+                                <a href="./index.html">Movie App</a>
+                        </h1>
+                </section>
                 <ul class="menu__list" role="menu">
                     <li class="menu__item menu__item--active"><a href="#" tabindex="1" class="menu__link">Home</a></li>
                     <li class="menu__item"><a href="#" tabindex="2" class="menu__link">Explore</a></li>
@@ -94,24 +98,26 @@
             <section class="related__list movie__list"></section>
         </article>
 
-        <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
         <template id="latest-movies">
             <section class='movie-card'>
                 <figure class='movie__figure'>
                     <img class='movie__figure__poster' src=${movieimg}>
                 </figure>
                 <div class='movie-details'>
-                    <section class='movie-details--left movie-details--inner'>
-                        <p class='movie__name'></p>
-                        <p class='movie__genre'></p>
-                        <div class="movie__ratingStars">
-                            <span></span>
-                        </div>
-                    </section>
-                    <section class='movie-details--right movie-details--inner'>
-                        <p class='movie__heart'><i class='fa fa-heart-o'></i></p>
-                        <p class='movie__showmore-link'><a>show more</a></p> 
-                    </section>
+                        <div class="details__header">
+                                <p class='movie__name'></p>
+                                <span class='movie__heart'><i class='fa fa-heart-o'></i></span>
+                            </div>
+                            <div class="details__body">
+                                <p class='movie__genre'></p>
+                                
+                            </div>
+                            <div class="details__footer">
+                                    <p class="movie__ratingStars">
+                                            <span></span>
+                                    </p>
+                                <p class='movie__showmore-link'><a>show more</a></p>
+                            </div>
                 </div>
             </section>
         </template>

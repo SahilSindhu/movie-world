@@ -42,6 +42,11 @@ async function getSimilarMovieDetails(movie_id){
     movie_details = movie_details.json();
     return movie_details;
 }
+async function getActorDetails(ACTOR_ID){
+    let actor_details = await fetch(`https://api.themoviedb.org/3/person/${ACTOR_ID}?api_key=${API_KEY}&language=en-US`);
+    actor_details = actor_details.json();
+    return actor_details;
+}
 
-export {getGenres,getLatestData,getTrendingData,getPopularData,getMovieDetails,getSimilarMovieDetails};
+export {getGenres,getLatestData,getTrendingData,getPopularData,getMovieDetails,getSimilarMovieDetails,getActorDetails};
 

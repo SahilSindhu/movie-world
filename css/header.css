@@ -11,8 +11,10 @@
     justify-content: space-between;
 }
 
-.logo{
-    font-size: var(--medium-font-size);
+.logo__link{
+    color:grey;
+    font-size: var(--large-font-size);
+    word-spacing: 0.35em;
 }
 
 .menu__list{
@@ -21,7 +23,7 @@
 }
 
 .menu__item{
-    padding: 16px 50px;
+    padding: 17px 20px;
     outline: none;
 }
 
@@ -43,5 +45,8 @@
 @media screen and (min-width:768px){
     .menu{
         justify-content: flex-start;
+    }
+    .menu__item{
+        padding: 17px 50px;
     }
 }

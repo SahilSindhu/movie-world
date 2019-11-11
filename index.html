@@ -11,7 +11,11 @@
 <body>
     <header>
             <nav class="menu">
-                <section class="logo">Movie App</section>
+                <section class="menu__logo">
+                    <h1 class="logo__heading">
+                        <a class="logo__link" href="./index.html">Movie App</a>
+                    </h1>
+                </section>
                 <ul class="menu__list" role="menu">
                     <li class="menu__item menu__item--active"><a href="#" tabindex="1" class="menu__link">Home</a></li>
                     <li class="menu__item"><a href="#" tabindex="2" class="menu__link">Explore</a></li>
@@ -20,7 +24,6 @@
     </header>
 
     <main id='main' class="movie-container main">
-        <!--movie__list data will be added dynamicly-->
         <article class="movie__row latest">
             <h3 class="movie__row__heading">Latest</h3>
             <section class="latest__list movie__list"></section>
@@ -37,7 +40,7 @@
         </article>
 
 
-        <div id="movie__modal" class="modal">
+        <article id="movie__modal" class="modal">
 
             <!-- Modal content -->
             <article class="modal__content">
@@ -52,18 +55,7 @@
                             <img src="http://placehold.jp/190x190.png" alt="" title="">
                         </figure>
                         <div class="movie__content">
-                            <p class="movie__overview">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                                been
-                                the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                                galley
-                                of type and scrambled it to make a type specimen book. It has survived not only five
-                                centuries,
-                                but also the leap into electronic typesetting, remaining essentially unchanged. It was
-                                popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                                passages,
-                                and more recently with desktop publishing software like Aldus PageMaker including versions
-                                of
-                                Lorem Ipsum.</p>
+                            <p class="movie__overview"></p>
                         </div>
                     </div>
                     <div class="modal__details">
@@ -112,7 +104,7 @@
                     </div>
                 </section>
             </article>
-        </div>
+        </article>
 
         <template id="latest-movies">
             <section class='movie-card'>
@@ -120,17 +112,20 @@
                     <img class='movie__figure__poster' src=${movieimg}>
                 </figure>
                 <div class='movie-details'>
-                    <section class='movie-details--left movie-details--inner'>
+                    <div class="details__header">
                         <p class='movie__name'></p>
+                        <span class='movie__heart'><i class='fa fa-heart-o'></i></span>
+                    </div>
+                    <div class="details__body">
                         <p class='movie__genre'></p>
-                        <div class="movie__ratingStars">
-                            <span></span>
-                        </div>
-                    </section>
-                    <section class='movie-details--right movie-details--inner'>
-                        <p class='movie__heart'><i class='fa fa-heart-o'></i></p>
-                        <p class='movie__showmore-link'><a>show more</a></p> 
-                    </section>
+                        
+                    </div>
+                    <div class="details__footer">
+                            <p class="movie__ratingStars">
+                                    <span></span>
+                            </p>
+                        <p class='movie__showmore-link'><a>show more</a></p>
+                    </div>
                 </div>
             </section>
         </template>

@@ -1,4 +1,9 @@
 /* inner movie detail page start here */
+@import './reset.css';
+@import './variable.css';
+@import './movie-row.css';
+@import './header.css';
+
 .full__banner {
     width: 100%;
     position: relative;

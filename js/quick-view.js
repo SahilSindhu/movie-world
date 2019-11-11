@@ -40,14 +40,14 @@ function getQuickViewData(movieid){
             }
         });
 
-        overlay();
+        movieDetailOverlay();
         populateOverlay(movie_name,poster_path,movie_overview,movie_genre,movie_cast,movie_director,movie_rating);
       
     })
 
     getMovieDetails(movieid);
 }
-function overlay(){
+function movieDetailOverlay(){
     var modal = document.getElementById("movie__modal");
 
     modal.style.display = 'block';

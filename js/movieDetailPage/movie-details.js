@@ -5,6 +5,8 @@ import { getSimilarMovieDetails } from '../api.js';
 
 const POSTER_PATH_PREFIX = 'https://image.tmdb.org/t/p/w500/';
 
+
+
 setMovieDetails();
 
 async function setMovieDetails() {
@@ -56,7 +58,7 @@ async function setMovieDetails() {
         let ratingMovies = Math.round((movieDetails.vote_average / 2));
         const rating = node.querySelector('.movie__ratingStars span')
         rating.innerHTML = ratingStarTemplate(ratingMovies);
-
+        console.log(movieDetails)
         document.getElementById('main-details').append(node);
     }
 }
@@ -73,4 +75,6 @@ function getMovieId(parameterName) {
         });
     return result;
 }
+
+
 
