@@ -1,5 +1,6 @@
 import {ratingStarTemplate} from './common/rating-star.js';
- function cardMarkup(moviename,movierating,moviegenre,movieimg,movieId) {
+
+function cardMarkup(moviename,movierating,moviegenre,movieimg,movieId) {
     
     let template = document.getElementById("latest-movies");
     let movieCard = template.content.querySelector(".movie-card");

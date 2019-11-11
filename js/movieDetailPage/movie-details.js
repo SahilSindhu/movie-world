@@ -54,8 +54,11 @@ async function setMovieDetails() {
         cast = cast.slice(0, -2);
 
         const castData = node.querySelector('.cast__data td');
-        castData.append(document.createTextNode(cast))
+        castData.append(document.createTextNode(cast));
 
+          //get director name
+        const director_node = node.querySelector('.director_name');
+        director_node.append(document.createTextNode((movieDetails.credits.crew.filter((ele)=> ele.job == 'Director')[0].name)));
         //for movie rating
         let ratingMovies = Math.round((movieDetails.vote_average / 2));
         const rating = node.querySelector('.movie__ratingStars span')
