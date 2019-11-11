@@ -1,7 +1,7 @@
-import { getMovieDetails } from './api.js';
-import { ratingStarTemplate } from './common/rating-star.js';
-import { cardMarkup } from './markup-templates.js';
-import { getSimilarMovieDetails } from './api.js';
+import { getMovieDetails } from '../api.js';
+import { ratingStarTemplate } from '../common/rating-star.js';
+import { cardMarkup } from '../markup-templates.js';
+import { getSimilarMovieDetails } from '../api.js';
 const POSTER_PATH_PREFIX = 'https://image.tmdb.org/t/p/w500/';
 
 function findGetParameter(parameterName) {
