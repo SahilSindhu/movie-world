@@ -1,24 +1,14 @@
 import { getMovieDetails } from '../api.js';
 import { ratingStarTemplate } from '../common/rating-star.js';
-import { cardMarkup } from '../markup-templates.js';
+import { cardMarkup } from '../common/markup-templates.js';
 import { getSimilarMovieDetails } from '../api.js';
+
 const POSTER_PATH_PREFIX = 'https://image.tmdb.org/t/p/w500/';
 
-function findGetParameter(parameterName) {
-    var result = null,
-        tmp = [];
-    window.location.search
-        .substr(1)
-        .split("&")
-        .forEach(function (item) {
-            tmp = item.split("=");
-            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-        });
-    return result;
-}
+setMovieDetails();
 
 async function setMovieDetails() {
-    const id = findGetParameter('id');
+    const id = getMovieId('id');
     getSimilarMovieDetails(id).then((res,err)=>{
         res.results.forEach((ele,idx)=>{
             if(idx <= 3){
@@ -71,4 +61,16 @@ async function setMovieDetails() {
     }
 }
 
-setMovieDetails();
+function getMovieId(parameterName) {
+    var result = null,
+        tmp = [];
+    window.location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+            tmp = item.split("=");
+            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}
+

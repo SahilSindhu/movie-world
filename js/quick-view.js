@@ -81,9 +81,9 @@ function populateOverlay(movie_name,poster_path,movie_overview,movie_genre,movie
     modal.querySelector('.movie__image img').setAttribute('src',`${POSTER_PATH_PREFIX}/${poster_path}`);
     modal.querySelector('.movie__overview').innerHTML = movie_overview;
     modal.querySelector('.modal__genre td').innerHTML = movie_genre.join(',');
-     modal.querySelector('.modal__cast td').innerHTML = movie_cast.join(',');
-     modal.querySelector('.modal__director td').innerHTML = movie_director;
-     modal.querySelectorAll('.modal__rating-stars span').forEach((ele,idx)=>{
+    modal.querySelector('.modal__cast td').innerHTML = movie_cast.join(',');
+    modal.querySelector('.modal__director td').innerHTML = movie_director;
+    modal.querySelectorAll('.modal__rating-stars span').forEach((ele,idx)=>{
          if(idx<=movie_rating-1){
              ele.classList.add('fa-star');
              ele.classList.remove('fa-star-o');

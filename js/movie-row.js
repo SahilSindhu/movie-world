@@ -1,4 +1,4 @@
-import {cardMarkup} from './markup-templates.js';
+import {cardMarkup} from './common/markup-templates.js';
 
 const POSTER_PATH_PREFIX =`https://image.tmdb.org/t/p/w500/`;
 

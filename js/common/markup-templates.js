@@ -1,4 +1,4 @@
-import {ratingStarTemplate} from './common/rating-star.js';
+import {ratingStarTemplate} from './rating-star.js';
 
 function cardMarkup(moviename,movierating,moviegenre,movieimg,movieId) {
     
