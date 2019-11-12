@@ -1,7 +1,7 @@
 import { getGenres,getLatestData, getTrendingData,getPopularData } from './app-common-functionalities/load-movie-data.js';
-import { createRow } from './app-common-functionalities/movie-row.js/index.js';
+import { createRow } from './app-common-functionalities/movie-row.js';
 import { movieQuickView } from './app-common-functionalities/movie-popup.js';
-import { getActordata } from './actorDetailPage/actorDetail.js';
+// import { getActordata } from './actorDetailPage/actorDetail.js';
 (function(){
     //create a array to hold all the server returned data
     let movieData = [];
@@ -33,7 +33,7 @@ import { getActordata } from './actorDetailPage/actorDetail.js';
     */
    
     movieQuickView.addMovieEventListener()
-    getActordata(null);
+    // getActordata(null);
 })();
 
 

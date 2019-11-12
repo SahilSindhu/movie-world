@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <section class="container section">
+
+		<section id="header">			
+		</section>
+
+		<!-- Main Content starts here -->
+		<main class="actor-details">
+			<section class="container-fluid">
+				<figure class="detail">
+					<img src="" class="detail__image">
+					<figcaption class="detail__content">
+						<div class="rate-meter pull-right">
+							<i class="fa fa-star fa-2x"></i>
+							<h2>
+								Meter <br/>
+								<strong class="popularity_meter"></strong>
+							</h2>
+						</div>
+						<h1 class="detail__heading">
+							
+						</h1>
+						<p class="detail__desc">
+							Date of birth : <span class="dob"></span>
+						</p>
+						<p class="detail__desc">
+						</p>
+					</figcaption>
+				</figure>
+			</section>
+			<section class="container-fluid">
+				<h2>
+					Filmography
+				</h2>
+				
+				<div id="getFilmList">					
+				</div>
+
+				<template id="filmList">
+					<div class="list">					
+						<h3>
+							<span class="release_year"></span>
+						</h3>
+					</div>
+				</template>
+
+				<template id="listCols">
+					<div class="list">	
+						<article class="list__col">
+							<p>Title : <span>Movie 1</span></p>
+							<p>Year : <span>2014</span></p>
+							<p>Character : <span>Xyz</span></p>
+						</article>
+					</div>
+				</template>
+			</section>
+		</main>
+		<!-- Main Content starts here -->
+
+	</section>
+    <script type="module" src ='./js/actorDetailPage/actorDetail.js'></script>
+</body>
+</html>

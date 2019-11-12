@@ -15,8 +15,8 @@ export var movieQuickView ={
                                 movie_cast = []
                                 getMovieDetails(movieid).then((res)=>{
                                     movie_name = res.original_title;
-                                    poster_path = res.poster_path;
-                                    movie_overview = res.overview;
+                                    poster_path = res.backdrop_path;
+                                    movie_overview = res.overview.split(' ').filter((ele,idx)=>{return idx<=200}).join(' ');
                                     res.genres.forEach((ele)=>{ movie_genre.push(ele.name);});
                                     res.credits.cast.forEach((ele,idx)=>{if(idx<=4){movie_cast.push(ele.name)}});
                                     movie_rating = Math.round(res.vote_average/2)
@@ -34,20 +34,22 @@ export var movieQuickView ={
                                 getMovieDetails(movieid);
                          },
     movieDetailOverlay :function(){
-                                var modal = document.getElementById("movie__modal");
+                                let modal = document.getElementById("movie__modal");
 
                                 modal.style.display = 'block';
                                 // Get the button that opens the modal
-                                var btn = document.getElementById("modal");
+                                let btn = document.getElementById("modal");
 
                                 // Get the <span> element that closes the modal
-                                var span = document.getElementsByClassName("modal__close")[0];
+                                let modal_close = document.querySelectorAll(".modal__close__icon");
 
                                 // When the user clicks the button, open the modal
                                 btn.addEventListener('click',()=>{modal.style.display = "block";})
 
-                                // When the user clicks on <span> (x), close the modal
-                                span.addEventListener('click',()=>{modal.style.display = "none";})
+                                // When the user clicks on close button or (x), close the modal
+                                modal_close.forEach(element => {
+                                    element.addEventListener('click',()=>{modal.style.display = "none";})}
+                                )
 
                                 // When the user clicks anywhere outside of the modal, close it
                                 window.addEventListener('click',(event)=>{
@@ -63,6 +65,7 @@ export var movieQuickView ={
                                 modal.querySelector('.modal__title').innerHTML = movie_name;
                                 modal.querySelector('.modal__image').setAttribute('src',`${POSTER_PATH_PREFIX}/${poster_path}`);
                                 modal.querySelector('.movie__overview').innerHTML = movie_overview;
+                               
                                 modal.querySelector('.modal__genre td').innerHTML = movie_genre.join(',');
                                 modal.querySelector('.modal__cast td').innerHTML = movie_cast.join(',');
                                 modal.querySelector('.modal__director td').innerHTML = movie_director;

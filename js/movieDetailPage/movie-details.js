@@ -23,42 +23,34 @@ async function setMovieDetails() {
     })
     if (id) {
         const movieDetails = await getMovieDetails(id);
-        const template = document.getElementById("details");
-        const details = template.content.querySelector("div");
-        const node = document.importNode(details, true);
-        const description = node.querySelector('.para-text');
-        const movieTitle = node.querySelector('.primary-text')
-        const moviePoster = node.querySelector('.full__banner figure img');
        
+        let details_node = document.querySelector('#main-details');
+        let moviePoster = details_node.querySelector('.banner_image');
+        let description = details_node.querySelector('.movie__detail__description');
+        let movieTitle = details_node.querySelector('.movie__title');
+        let genredata = details_node.querySelector('.genre__data td');
+        let castData = details_node.querySelector('.cast__data td');
+        let director_node = details_node.querySelector('.director_name');
+        let rating = details_node.querySelector('.movie__ratingStars span');
+        
         description.append(document.createTextNode(movieDetails.overview))
         movieTitle.append(document.createTextNode(movieDetails.original_title))
-        moviePoster.setAttribute("src", POSTER_PATH_PREFIX + movieDetails.poster_path);
+        moviePoster.setAttribute("src", POSTER_PATH_PREFIX + movieDetails.backdrop_path);
         moviePoster.setAttribute("alt", movieDetails.original_title);
         moviePoster.setAttribute("title", movieDetails.original_title);
 
         let genre = '';
         movieDetails.genres.map(genreItem => genre += genreItem.name + ', ');
-        const genredata = node.querySelector('.genre__data td');
         genredata.append(document.createTextNode(genre));
 
         let cast = '';
-        movieDetails.credits.cast.slice(0, 8).map(item => cast += item.name + ', ');
-        cast = cast.slice(0, -2);
-
+        let castnode = movieDetails.credits.cast.slice(0, 8).map(ele =>`<a href='actor-detail.html?castId=${ele.id}'  data-cast-id=${ele.id}>${ele.name}</a>`);
         
-        const castData = node.querySelector('.cast__data td');
-        castData.append(document.createTextNode(cast));
-
-
-        //get director name
-        const director_node = node.querySelector('.director_name');
+        castData.insertAdjacentHTML('beforeend',castnode.join(','));
         director_node.append(document.createTextNode((movieDetails.credits.crew.filter((ele)=> ele.job == 'Director')[0].name)));
-        console.log()
-        //for movie rating
+    
         let ratingMovies = Math.round((movieDetails.vote_average / 2));
-        const rating = node.querySelector('.movie__ratingStars span')
         rating.innerHTML = ratingStarTemplate(ratingMovies);
-        document.getElementById('main-details').append(node);
 
 
         //add qucick view overlay

@@ -15,35 +15,34 @@
 </head>
 
 <body>
-    <main class="movies">
         <header>
-            <nav class="menu">
-                <section class="logo">
-                        <h1>
-                                <a href="./index.html">Movie App</a>
+                <nav class="menu">
+                    <section class="menu__logo">
+                        <h1 class="logo__heading">
+                            <a class="logo__link" href="./index.html">Movie App</a>
                         </h1>
-                </section>
-                <ul class="menu__list" role="menu">
-                    <li class="menu__item menu__item--active"><a href="#" tabindex="1" class="menu__link">Home</a></li>
-                    <li class="menu__item"><a href="#" tabindex="2" class="menu__link">Explore</a></li>
-                </ul>
-            </nav>
-    </header>
+                    </section>
+                    <ul class="menu__list" role="menu">
+                        <li class="menu__item menu__item--active"><a href="#" tabindex="1" class="menu__link">Home</a></li>
+                        <li class="menu__item"><a href="#" tabindex="2" class="menu__link">Explore</a></li>
+                    </ul>
+                </nav>
+        </header>
+    <main class="movie__detail_main">
 
-        <div id="main-details">
-            <template id="details">
+        <article class="movie__details" id="main-details">
                 <div>
-                    <section class="full__banner">
-                        <figure>
-                            <img src="" alt="" title="" class="movie__poster">
+                    <section class="movie__banner">
+                        <figure class="banner__figure">
+                            <img  src="" alt="" title="" class="banner_image movie__poster">
                         </figure>
                     </section>
 
-                    <section class="movie__details">
-                        <div class="container movie__layout">
+                    <section class="movie__description">
+                        
                             <article class="movie__desc">
-                                <h2 class="primary-text"></h2>
-                                <p class="para-text"></p>
+                                <h2 class="movie__title primary-text"></h2>
+                                <p class="movie__detail__description para-text"></p>
                             </article>
                             <aside class="movie__info">
                                 <table class="table">
@@ -85,13 +84,11 @@
                                     </tbody>
                                 </table>
                             </aside>
-                        </div>
+                        
                     </section>
                 </div>
-            </template>
-            </div>
-    
-
+           
+        </article>
 
         <article class="movie__row related-movies">
             <h3 class="movie__row__heading">Most Watched</h3>
@@ -123,57 +120,57 @@
         </template>
 
         <article id="movie__modal" class="modal">
-            <article class="modal__content">
-                <section class="modal__header">
-                    <h2 class="primary-text modal__title"></h2>
-                    <span class="modal__close">&times;</span>
-                </section>
-    
-                <section class="modal__body">
-                    <div class="modal__desc">
-                        <figure class="movie__figure modal__figure" id="modal">
-                            <img class="movie__image modal__image" src="" alt="" title="movie image">
-                        </figure>
-                        <div class="movie__content">
-                            <p class="movie__overview modal__overview"></p>
+                <article class="modal__content">
+                    <section class="modal__header">
+                        <h2 class="primary-text modal__title"></h2>
+                        <span class="modal__close modal__close__icon">&times;</span>
+                    </section>
+        
+                    <section class="modal__body">
+                        <div class="modal__desc">
+                            <figure class="movie__figure modal__figure" id="modal">
+                                <img class="movie__image modal__image" src="" alt="" title="movie image">
+                            </figure>
+                            <div class="movie__content">
+                                <p class="movie__overview modal__overview"></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal__details">
-                        <table class="table modal__table">
-                            <tbody class="table__body modal_body">
-                                <tr class="modal__genre">
-                                    <th>genre</th>
-                                    <td> </td>
-                                </tr>
-                                <tr class="modal__cast">
-                                    <th>Cast </th>
-                                    <td></td>
-                                </tr>
-                                <tr class="modal__director">
-                                    <th>Director</th>
-                                    <td></td>
-                                </tr>
-                                <tr class="modal__rating">
-                                    <th> Movie Rating</th>
-                                    <td>
-                                        <div class="modal__rating-stars">
-                                            <span class="fa fa-star-o"></span>
-                                            <span class="fa fa-star-o"></span>
-                                            <span class="fa fa-star-o"></span>
-                                            <span class="fa fa-star-o"></span>
-                                            <span class="fa fa-star-o"></span>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-                <section class="modal__footer">
-                    <button type="button">close</button>
-                </section>
+                        <div class="modal__details">
+                            <table class="table modal__table">
+                                <tbody class="table__body modal_body">
+                                    <tr class="modal__row modal__genre">
+                                        <th class="modal__row__head">genre</th>
+                                        <td> </td>
+                                    </tr>
+                                    <tr class="modal__row modal__cast">
+                                        <th  class="modal__row__head">Cast </th>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="modal__row modal__director">
+                                        <th  class="modal__row__head">Director</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="modal__row modal__rating">
+                                        <th  class="modal__row__head"> Movie Rating</th>
+                                        <td>
+                                            <div class="modal__rating-stars">
+                                                <span class="fa fa-star-o"></span>
+                                                <span class="fa fa-star-o"></span>
+                                                <span class="fa fa-star-o"></span>
+                                                <span class="fa fa-star-o"></span>
+                                                <span class="fa fa-star-o"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section class="modal__footer">
+                        <button class="modal__footer__button modal__close__icon" type="button">close</button>
+                    </section>
+                </article>
             </article>
-        </article>
 
 
 

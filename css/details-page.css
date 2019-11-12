@@ -4,37 +4,43 @@
 @import './movie-row.css';
 @import './header.css';
 @import './modal.css';
-.full__banner {
+.movie__banner {
     width: 100%;
-    position: relative;
 }
 .movie__poster {
     width: 100%;
-    height: calc(100vh - 37px);
-    object-fit: cover;
+    height: 60vh;
 }
 .movie__details {
     width: 100%;
-    padding-top: 50px;
     display: flex;
 }
-.movie__layout{
-    width:100%;
+.movie__description{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 90%;
+    margin : 0 auto;
 }
 .movie__desc{
-    width:47.5%;
-    margin-top:10px;
+    width:50%;
+    padding: 10px;
 }
 .movie__info {
-    width: 47.5%;
+    width: 50%;
     background: #cccccc38;
+    margin-top: 20px;
+    border-radius: 5px;
     padding: 25px 15px 25px 15px;
 }
+.movie__title{
+    font-size: 1.3em;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+.movie__detail__description{
+    margin-top : 30px;
+}
 .movie__info .table tr {
-
     line-height: 2.8em;
     width: 100%;
     border-bottom: 1px solid #cccc;
@@ -60,5 +66,12 @@
 }
 .movie__desc .para-text{
     text-align: justify;
+}
+.related-movies{
+    width: 90%;
+    margin: 0 auto;
+}
+.related-movies .movie-details{
+    height: 20%;
 }
 /* inner movie detail page end here */
