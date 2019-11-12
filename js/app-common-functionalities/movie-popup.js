@@ -1,5 +1,5 @@
 import { getMovieDetails } from './load-movie-data.js';
-
+import { ratingStarTemplate } from './rating-star.js';
 export var movieQuickView ={
     addMovieEventListener :function(){
                                 document.querySelectorAll('.movie__row').forEach((ele,idx)=>{
@@ -35,23 +35,13 @@ export var movieQuickView ={
                          },
     movieDetailOverlay :function(){
                                 let modal = document.getElementById("movie__modal");
-
                                 modal.style.display = 'block';
-                                // Get the button that opens the modal
                                 let btn = document.getElementById("modal");
-
-                                // Get the <span> element that closes the modal
                                 let modal_close = document.querySelectorAll(".modal__close__icon");
-
-                                // When the user clicks the button, open the modal
                                 btn.addEventListener('click',()=>{modal.style.display = "block";})
-
-                                // When the user clicks on close button or (x), close the modal
                                 modal_close.forEach(element => {
                                     element.addEventListener('click',()=>{modal.style.display = "none";})}
                                 )
-
-                                // When the user clicks anywhere outside of the modal, close it
                                 window.addEventListener('click',(event)=>{
                                     if (event.target == modal) {
                                         modal.style.display = "none";
@@ -61,7 +51,7 @@ export var movieQuickView ={
     populateOverlay     : function(movie_name,poster_path,movie_overview,movie_genre,movie_cast,movie_director,movie_rating){
                                 const POSTER_PATH_PREFIX =`https://image.tmdb.org/t/p/w500/`;
                                 let modal = document.querySelector('.modal__content');
-                                
+                                let rating_stars =ratingStarTemplate(movie_rating);
                                 modal.querySelector('.modal__title').innerHTML = movie_name;
                                 modal.querySelector('.modal__image').setAttribute('src',`${POSTER_PATH_PREFIX}/${poster_path}`);
                                 modal.querySelector('.movie__overview').innerHTML = movie_overview;
@@ -69,17 +59,8 @@ export var movieQuickView ={
                                 modal.querySelector('.modal__genre td').innerHTML = movie_genre.join(',');
                                 modal.querySelector('.modal__cast td').innerHTML = movie_cast.join(',');
                                 modal.querySelector('.modal__director td').innerHTML = movie_director;
-                                modal.querySelectorAll('.modal__rating-stars span').forEach((ele,idx)=>{
-                                    if(idx<=movie_rating-1){
-                                        ele.classList.add('fa-star');
-                                        ele.classList.remove('fa-star-o');
-                                    }
-                                    else{
-                                        ele.classList.remove('fa-star');
-                                        ele.classList.add('fa-star-o');
-                                    }
-                                })
-
+                                modal.querySelector('.modal__rating-stars').insertAdjacentHTML('beforeend',rating_stars);
+              
                         }
                         
 }

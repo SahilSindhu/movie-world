@@ -1,4 +1,5 @@
 import {cardMarkup} from './markup-templates.js';
+import { getGenre } from '../app-common-functionalities/getGenre.js';
 
 const POSTER_PATH_PREFIX =`https://image.tmdb.org/t/p/w500/`;
 
@@ -7,11 +8,9 @@ const POSTER_PATH_PREFIX =`https://image.tmdb.org/t/p/w500/`;
                                     genre is list of all genre
 */
 export function createRow(rowData,idx,genre){
-    rowData.forEach((ele,index) => {
+    rowData.slice(0,4).forEach((ele,index) => {
         let movieGenreName = getGenre(ele.genre_ids,genre);
-        if(index<=3){
-            createMovieCard(ele,idx,movieGenreName)
-        }
+            createMovieCard(ele,idx,movieGenreName);
     });
 }
 
@@ -20,32 +19,10 @@ export function createRow(rowData,idx,genre){
 */
 function  createMovieCard(singleMovie,idx,movieGenreName){
     let rating = Math.floor(singleMovie.vote_average/2);
-    let x =cardMarkup(singleMovie.title,rating,movieGenreName,`${POSTER_PATH_PREFIX}/${singleMovie.poster_path}`,singleMovie.id);
-    
-    switch(idx){
-        case 1:document.querySelector('.latest__list').insertAdjacentElement('beforeend',x);
-                break;
-        case 2:document.querySelector('.trending__list').insertAdjacentElement('beforeend',x);
-                 break;
-        case 3:document.querySelector('.mostwatched__list').insertAdjacentElement('beforeend',x);
-                break;
-    }
+    let single_card_markup =cardMarkup(singleMovie.title,rating,movieGenreName,`${POSTER_PATH_PREFIX}/${singleMovie.poster_path}`,singleMovie.id);
+    let home_page_movie_rows = document.querySelectorAll('.movie__list');
+    home_page_movie_rows[idx].insertAdjacentElement('beforeend',single_card_markup);
 
-    
 }
-/*
-    we get the genre of our movie by using genre id and matching it to all
-    genre list
-*/
-function getGenre(movieGenreId, allGenere){
-    let movieGenreName = [];
-    movieGenreId.forEach((ele)=>{
-        allGenere.forEach((all)=>{
-            if(ele == all.id){
-                movieGenreName.push(all.name)
-            }
-        })
-    })
-    return movieGenreName;
-}
+
 
