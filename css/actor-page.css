@@ -1,0 +1,42 @@
+@import './reset.css';
+@import './variable.css';
+@import './header.css';
+
+
+.actor__intro{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding : 20px;
+}
+.actor__banner{
+    width: 45%;
+    overflow: hidden;
+}
+.actor__image{
+    width: 100%;
+    height: 350px;
+}
+
+.actor__biography{
+    width: 45%;
+}
+
+
+.actor__movie__year{
+
+}
+.movie__year__heading{
+    font-size: 1.3em;
+}
+.card__holder{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin:10px;
+    
+}
+.movie__card{
+    max-width: 25%;
+    overflow: hidden;
+}

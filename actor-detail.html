@@ -3,67 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="./css/actor-page.css">
+    <title>Actor</title>
 </head>
 <body>
     <section class="container section">
 
-		<section id="header">			
-		</section>
+			<header>
+					<nav class="menu">
+						<section class="menu__logo">
+							<h1 class="logo__heading">
+								<a class="logo__link" href="./index.html">Movie App</a>
+							</h1>
+						</section>
+						<ul class="menu__list" role="menu">
+							<li class="menu__item menu__item--active"><a href="#" tabindex="1" class="menu__link">Home</a></li>
+							<li class="menu__item"><a href="#" tabindex="2" class="menu__link">Explore</a></li>
+						</ul>
+					</nav>
+			</header>
 
 		<!-- Main Content starts here -->
 		<main class="actor-details">
-			<section class="container-fluid">
-				<figure class="detail">
-					<img src="" class="detail__image">
-					<figcaption class="detail__content">
-						<div class="rate-meter pull-right">
-							<i class="fa fa-star fa-2x"></i>
-							<h2>
-								Meter <br/>
-								<strong class="popularity_meter"></strong>
-							</h2>
-						</div>
-						<h1 class="detail__heading">
-							
-						</h1>
-						<p class="detail__desc">
-							Date of birth : <span class="dob"></span>
-						</p>
-						<p class="detail__desc">
-						</p>
-					</figcaption>
+			
+			<article class="actor__intro">
+				<figure class="actor__banner">
+					<img class="actor__image" src="" alt="">
 				</figure>
-			</section>
+				<section class="actor__biography">
+					<h2 class="actor__title"></h2>
+					<p class="actor__dob"></p>
+					<p class="actor__description"></p>
+				</section>
+			</article>
+
+			<article class="actor__movies">
+				<h2>Filmography</h2>
+				<template id='release__year'>
+					<h3 class="release__year__heading"></h3>
+				</template>
+				<template id='movie__detail'>
+						<p></p>
+						<p></p>
+						<p></p>
+					</template>
+			</article>
 			<section class="container-fluid">
 				<h2>
 					Filmography
 				</h2>
 				
-				<div id="getFilmList">					
+				<div class="movie__row">
+										
 				</div>
 
 				<template id="filmList">
-					<div class="list">					
-						<h3>
-							<span class="release_year"></span>
-						</h3>
+					<div class="actor__movie__year">					
+						<h3 class="movie__year__heading"></h3>
+						<section class="card__holder"></section>
 					</div>
+					
 				</template>
 
-				<template id="listCols">
-					<div class="list">	
-						<article class="list__col">
-							<p>Title : <span>Movie 1</span></p>
-							<p>Year : <span>2014</span></p>
-							<p>Character : <span>Xyz</span></p>
+				<template id="movie__card">
+						<article class="movie__card">
+							<p>Title : <span class="movie__title"></span></p>
+							<p>Year : <span class="movie__year"></span></p>
+							<p>Character : <span class="movie__character"></span></p>
 						</article>
-					</div>
 				</template>
 			</section>
 		</main>
-		<!-- Main Content starts here -->
 
 	</section>
     <script type="module" src ='./js/actorDetailPage/actorDetail.js'></script>

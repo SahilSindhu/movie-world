@@ -53,7 +53,11 @@ async function getMovieData(id){
         let castnode = movieDetails.credits.cast.slice(0, 8).map(ele =>`<a href='actor-detail.html?castId=${ele.id}'  data-cast-id=${ele.id}>${ele.name}</a>`);
         
         castData.insertAdjacentHTML('beforeend',castnode.join(','));
-        director_node.append(document.createTextNode((movieDetails.credits.crew.filter((ele)=> ele.job == 'Director')[0].name)));
+
+        let director_name = (movieDetails.credits.crew.filter((ele)=> ele.job == 'Director')[0].name);
+        let director_id =  (movieDetails.credits.crew.filter((ele)=> ele.job == 'Director')[0].id);
+       
+        director_node.insertAdjacentHTML('beforeend',`<a href='actor-detail.html?castId=${director_id}'>${director_name}</a>`);
     
         let ratingMovies = Math.round((movieDetails.vote_average / 2));
         rating.innerHTML = ratingStarTemplate(ratingMovies);
