@@ -1,8 +1,8 @@
-import { getMovieDetails } from '../api.js';
-import { ratingStarTemplate } from '../common/rating-star.js';
-import { cardMarkup } from '../common/markup-templates.js';
-import { getSimilarMovieDetails } from '../api.js';
-
+import { getMovieDetails } from '../app-common-functionalities/load-movie-data.js';
+import { ratingStarTemplate } from '../app-common-functionalities/rating-star.js';
+import { cardMarkup } from '../app-common-functionalities/markup-templates.js';
+import { getSimilarMovieDetails } from '../app-common-functionalities/load-movie-data.js';
+import { movieQuickView } from '../app-common-functionalities/movie-popup.js';
 const POSTER_PATH_PREFIX = 'https://image.tmdb.org/t/p/w500/';
 
 
@@ -58,8 +58,11 @@ async function setMovieDetails() {
         let ratingMovies = Math.round((movieDetails.vote_average / 2));
         const rating = node.querySelector('.movie__ratingStars span')
         rating.innerHTML = ratingStarTemplate(ratingMovies);
-        console.log(movieDetails)
         document.getElementById('main-details').append(node);
+
+
+        //add qucick view overlay
+        movieQuickView.addMovieEventListener();
     }
 }
 

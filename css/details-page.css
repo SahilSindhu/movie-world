@@ -3,7 +3,7 @@
 @import './variable.css';
 @import './movie-row.css';
 @import './header.css';
-
+@import './modal.css';
 .full__banner {
     width: 100%;
     position: relative;

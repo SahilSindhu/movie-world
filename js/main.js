@@ -1,7 +1,7 @@
-import { getGenres,getLatestData,getTrendingData,getPopularData } from './api.js';
-import { createRow } from './movie-row.js';
-import { movieQuickView } from './quick-view.js';
-
+import { getGenres,getLatestData, getTrendingData,getPopularData } from './app-common-functionalities/load-movie-data.js';
+import { createRow } from './app-common-functionalities/movie-row.js/index.js';
+import { movieQuickView } from './app-common-functionalities/movie-popup.js';
+import { getActordata } from './actorDetailPage/actorDetail.js';
 (function(){
     //create a array to hold all the server returned data
     let movieData = [];
@@ -21,7 +21,6 @@ import { movieQuickView } from './quick-view.js';
                 ele().then((res,err)=>{
                     movieData[idx] =res;
                     createRow(res.results,idx,genre.genres);
-                    console.log(movieData[1])
                 })
             }
         })
@@ -32,8 +31,9 @@ import { movieQuickView } from './quick-view.js';
     apply listeners for quickview overlay and implements functionality
     to get moviedata data using voie id
     */
-    movieQuickView(movieData);
-
+   
+    movieQuickView.addMovieEventListener()
+    getActordata(null);
 })();
 
 

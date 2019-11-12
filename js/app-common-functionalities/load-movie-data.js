@@ -47,6 +47,10 @@ async function getActorDetails(ACTOR_ID){
     actor_details = actor_details.json();
     return actor_details;
 }
-
-export {getGenres,getLatestData,getTrendingData,getPopularData,getMovieDetails,getSimilarMovieDetails,getActorDetails};
+async function getActorFilmographyDetails(ACTOR_ID){
+    let actor_filmogrphy_detail = await fetch(`https://api.themoviedb.org/3/person/${ACTOR_ID}/movie_credits?api_key=${API_KEY}&language=en-US`);
+    actor_filmogrphy_detail = actor_filmogrphy_detail.json();
+    return actor_filmogrphy_detail;
+}
+export {getGenres,getLatestData,getTrendingData,getPopularData,getMovieDetails,getSimilarMovieDetails,getActorDetails,getActorFilmographyDetails};
 
