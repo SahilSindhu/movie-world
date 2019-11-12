@@ -21,12 +21,13 @@ import { movieQuickView } from './quick-view.js';
                 ele().then((res,err)=>{
                     movieData[idx] =res;
                     createRow(res.results,idx,genre.genres);
+                    console.log(movieData[1])
                 })
             }
         })
     }
     fetchMovieData();
-
+    
     /* 
     apply listeners for quickview overlay and implements functionality
     to get moviedata data using voie id

@@ -76,9 +76,7 @@ function populateOverlay(movie_name,poster_path,movie_overview,movie_genre,movie
     
     //modal.querySelector('.modal__title').appendChild(document.createTextNode(movie_name))
     modal.querySelector('.modal__title').innerHTML = movie_name;
-    modal.querySelector('.movie__image img').style.width = '200px';
-    modal.querySelector('.movie__image img').style.height = '100px';
-    modal.querySelector('.movie__image img').setAttribute('src',`${POSTER_PATH_PREFIX}/${poster_path}`);
+    modal.querySelector('.modal__image').setAttribute('src',`${POSTER_PATH_PREFIX}/${poster_path}`);
     modal.querySelector('.movie__overview').innerHTML = movie_overview;
     modal.querySelector('.modal__genre td').innerHTML = movie_genre.join(',');
     modal.querySelector('.modal__cast td').innerHTML = movie_cast.join(',');
