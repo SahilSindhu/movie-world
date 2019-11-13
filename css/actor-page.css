@@ -8,35 +8,83 @@
     justify-content: space-between;
     flex-wrap: nowrap;
     padding : 20px;
+    flex-direction: column;
 }
 .actor__banner{
-    width: 45%;
+    width: 100%;
     overflow: hidden;
+    border-radius: 10px;
 }
+
 .actor__image{
     width: 100%;
     height: 350px;
 }
 
 .actor__biography{
-    width: 45%;
+    width: 100%;
 }
 
+.actor__title{
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+}
+.actor__dob{
+    font-size: 0.8em;
+    margin-bottom: 10px;
+}
+.actor__description{
+    font-size: 1em;
+    font-family: sans-serif;
+}
+.actor__movie__dashboard{
+    width: 95%;
+    margin: 0 auto;
+}
+.filmography__heading{
+    font-size: 1.7em;
+    font-weight: 600;
+    margin : 10px 0 30px;
+    font-family: sans-serif;
+}
 
 .actor__movie__year{
 
 }
 .movie__year__heading{
     font-size: 1.3em;
+    padding : 15px 5px;
+    background: lightgray;
+    border-radius: 5px;
 }
 .card__holder{
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
     margin:10px;
-    
+    overflow: hidden;
 }
 .movie__card{
     max-width: 25%;
+    width: 25%;
     overflow: hidden;
+}
+.movie__card p{
+    font-size: 1em;
+    padding: 8px;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+@media screen and (min-width : 768px){
+    .actor__intro{
+        flex-direction: row;
+    }
+    .actor__banner{
+        width: 30%
+    }
+    .actor__biography{
+        width: 65%;
+    }
 }

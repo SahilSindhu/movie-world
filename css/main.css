@@ -2,10 +2,10 @@
 @import './variable.css';
 @import './header.css';
 @import './modal.css';
-@import './details-page.css';
 @import './movie-row.css';
 
+
 .movie-container{
-    width: 85%;
+    width: 90%;
     margin: 0 auto 30px;
 }

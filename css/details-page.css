@@ -4,6 +4,8 @@
 @import './movie-row.css';
 @import './header.css';
 @import './modal.css';
+
+
 .movie__banner {
     width: 100%;
 }
@@ -23,6 +25,7 @@
 }
 .movie__desc{
     width:50%;
+    margin-top: 20px;
     padding: 10px;
 }
 .movie__info {
@@ -40,6 +43,9 @@
 .movie__detail__description{
     margin-top : 30px;
 }
+
+
+
 .movie__info .table tr {
     line-height: 2.8em;
     width: 100%;
@@ -73,5 +79,14 @@
 }
 .related-movies .movie-details{
     height: 20%;
+}
+.movie__info a{
+    -webkit-transition:color 0.3s;
+    -o-transition:color 0.3s;
+    -moz-transition:color 0.3s;
+    transition:color 0.3s;
+}
+.movie__info a:hover{
+    color:dodgerblue;
 }
 /* inner movie detail page end here */

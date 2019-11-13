@@ -25,7 +25,8 @@ function populateActorDetailMarkup(actor_name,actor_birthday,actor_biography,act
     let actor_title = document.querySelector('.actor__title');
     let actor_dob = document.querySelector('.actor__dob');
     let actor_description = document.querySelector('.actor__description');
-
+    
+    actor_birthday = actor_birthday.split('-').join('/');
     actor_title.append(document.createTextNode(actor_name))
     actor_dob.append(document.createTextNode(actor_birthday))
     actor_description.append(document.createTextNode(actor_biography))

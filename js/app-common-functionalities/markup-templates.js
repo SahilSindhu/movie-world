@@ -17,7 +17,8 @@ function cardMarkup(moviename,movierating,moviegenre,movieimg,movieId) {
     figure.setAttribute("data-movie-id",movieId);
     show_more_link.setAttribute('href',`movie-details.html?id=${movieId}`);
     title.appendChild(document.createTextNode(moviename));
-    genre.appendChild(document.createTextNode(moviegenre[0] +" " + moviegenre[1]));
+    
+    genre.appendChild(document.createTextNode(moviegenre.join(',')));
   
     const ratingNode = node.querySelector('.movie__ratingStars span');
    

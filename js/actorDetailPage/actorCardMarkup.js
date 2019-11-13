@@ -5,13 +5,14 @@ export function addMovieCards(res) {
     res.cast.forEach((ele )=>{dateSet.add(ele.release_date.substr(0,4))});
    
     dateArray = [...dateSet];
-    dateArray.sort().forEach((ele)=>{
+    dateArray.sort().reverse().forEach((ele)=>{
+        
         let template = document.getElementById("filmList");
         let movieRow = template.content.querySelector(".actor__movie__year");
         let node = document.importNode(movieRow, true);
 
         let year = node.querySelector('.movie__year__heading');
-        year.append(document.createTextNode(ele))
+        year.append(document.createTextNode(ele || 'Year not specified'))
         document.querySelector('.movie__row').insertAdjacentElement('afterbegin',node)
 
         
@@ -21,7 +22,6 @@ export function addMovieCards(res) {
         specificMovie.forEach(ele =>{
             addSingleCard(ele);
         }) 
-        console.log(specificMovie)
     })
 }
 
