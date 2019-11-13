@@ -51,7 +51,7 @@ first styling for mobile devices
         flex-direction: column;
         justify-content: space-between;
         align-content: space-between;
-        height: 25%;
+        height: 23%;
 }
 .details__content{
         padding: 0.1em 0;

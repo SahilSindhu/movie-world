@@ -8,6 +8,7 @@ import { getMovieId } from './getMovieId.js';
 import { getMovieData } from './getMovieData.js';
 const POSTER_PATH_PREFIX = 'https://image.tmdb.org/t/p/w500/';
 
+
 /*
         It performs two tasks : 1) get the id of movie from the url
                                 2) create movie detail view and related movie list
