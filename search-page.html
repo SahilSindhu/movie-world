@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .column{
+            width:100px;
+            border: 1px soliod black;
+            margin: 7px;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <title>search page</title>
+</head>
+<body>
+    <form>
+        <input class="querry-input" type="text" >
+        <button type="button">search</button>
+        <input class="rating-range" type="range" min='0' max='10' value='5'>
+    </form>
+    <article class="row"></article>
+    <script type ='module' src ='./js/movie-search-page/movie-search.js'></script>
+</body>
+</html>
