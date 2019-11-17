@@ -22,11 +22,12 @@ import { allData } from './app-common-functionalities/constants/allData.js';
     homePageApi.forEach((url,idx )=>{
         loadMovieData(url).then(res => genre_promise.then(()=>{
                     allData.push(res.results);
+
                     createRow(res.results.slice(0,4),idx,genreData[0].genres)
                     if(allData.length == '3'){
                         localStorage.setItem('localMovieDB',JSON.stringify(allData));
                         localStorage.setItem('localGenreDb',JSON.stringify(genreData[0].genres))
-                    }
+                   }
                 }
         ));
     })

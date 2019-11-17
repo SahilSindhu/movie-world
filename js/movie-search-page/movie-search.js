@@ -1,3 +1,4 @@
+
 import { createRow } from '../app-common-functionalities/movie-row.js';
 import { getMovieDB } from './getMovieDB.js';
 import { movieQuickView } from '../app-common-functionalities/movie-popup.js'
