@@ -1,0 +1,9 @@
+@import './variable.css';
+@import './movie-row.css';
+@import './modal.css';
+@import './reset.css';
+
+.search-main{
+    width: 85%;
+    margin : 0 auto 30px;
+}

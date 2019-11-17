@@ -7,8 +7,13 @@ const POSTER_PATH_PREFIX =`https://image.tmdb.org/t/p/w500/`;
                                     index is used to get position where we have to append th card
                                     genre is list of all genre
 */
+let home_page_movie_rows; 
 export function createRow(rowData,idx,genre){
-    rowData.slice(0,4).forEach((ele,index) => {
+    home_page_movie_rows = document.querySelectorAll('.movie__list');
+    console.log(rowData);
+    home_page_movie_rows[idx].innerHTML ='';
+
+    rowData.forEach((ele,index) => {
         let movieGenreName = getGenre(ele.genre_ids,genre);
             createMovieCard(ele,idx,movieGenreName);
     });
@@ -18,9 +23,10 @@ export function createRow(rowData,idx,genre){
     use cardMarkup function to create movie card and then append the return value in dom
 */
 function  createMovieCard(singleMovie,idx,movieGenreName){
+  
     let rating = Math.floor(singleMovie.vote_average/2);
     let single_card_markup =cardMarkup(singleMovie.title,rating,movieGenreName,`${POSTER_PATH_PREFIX}/${singleMovie.poster_path}`,singleMovie.id);
-    let home_page_movie_rows = document.querySelectorAll('.movie__list');
+    
     home_page_movie_rows[idx].insertAdjacentElement('beforeend',single_card_markup);
 
 }

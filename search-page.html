@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <link rel="stylesheet" href="./css/search-page.css">
+    <title>search page</title>
+</head>
+<body>
+    <main class="search-main">
+            <form onsubmit="">
+                <input class="querry-input" type="text" >
+                <button type="button">search</button>
+                <input class="rating-range" type="range" min='0' max='10' value='5'>
+            </form>
+            <article class="movie__row latest">
+                <h3 class="movie__row__heading">Latest</h3>
+                <section class="latest__list movie__list"></section>
+            </article>
+
+
+            <template id="latest-movies">
+                <section class='movie-card'>
+                    <figure class='movie__figure'>
+                        <img class='movie__figure__poster' src=${movieimg}>
+                    </figure>
+                    <div class='movie-details'>
+                        <div class="details__content details__header">
+                            <p class='movie__name'></p>
+                            <span class='movie__heart'><i class='fa fa-heart-o'></i></span>
+                        </div>
+                        <div class="details__content details__body">
+                            <p class='movie__genre'></p>
+                            
+                        </div>
+                        <div class="details__content details__footer">
+                                <p class="movie__ratingStars">
+                                        <span></span>
+                                </p>
+                            <p class='movie__showmore-link'><a>show more</a></p>
+                        </div>
+                    </div>
+                </section>
+            </template>
+    </main>
+    <script type ='module' src ='./js/movie-search-page/movie-search.js'></script>
+</body>
+</html>

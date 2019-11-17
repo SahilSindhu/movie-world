@@ -22,6 +22,8 @@ function cardMarkup(moviename,movierating,moviegenre,movieimg,movieId) {
   
     const ratingNode = node.querySelector('.movie__ratingStars span');
    
+
+
     ratingNode.innerHTML = ratingStarTemplate(movierating);
      return node;
 }
