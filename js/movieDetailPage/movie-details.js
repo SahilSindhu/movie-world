@@ -1,11 +1,12 @@
 import { ratingStarTemplate } from '../app-common-functionalities/rating-star.js';
 import { cardMarkup } from '../app-common-functionalities/markup-templates.js';
 import { getMovieDetails,getSimilarMovieDetails,loadMovieData } from '../app-common-functionalities/load-movie-data.js';
-import { movieQuickView } from '../app-common-functionalities/movie-popup.js';
+
 import { api_urls } from '../app-common-functionalities/constants/api-urls.js';
 import { getGenre } from '../app-common-functionalities/getGenre.js';
 import { getMovieId } from './getMovieId.js';
 import { getMovieData } from './getMovieData.js';
+import { insertTemplateMarkup } from '../app-common-functionalities/markup-templates.js';
 const POSTER_PATH_PREFIX = 'https://image.tmdb.org/t/p/w500/';
 
 /*
@@ -18,6 +19,10 @@ const POSTER_PATH_PREFIX = 'https://image.tmdb.org/t/p/w500/';
     
     let genreData = [];
     let genre_promise =loadMovieData(api_urls.GENRE_API).then(res => genreData.push(res));
+
+    insertTemplateMarkup();
+
+
     genre_promise.then(()=>{
         getSimilarMovieDetails(id).then((res,err)=>{
             res.results.slice(0,4).forEach((ele,idx)=>{

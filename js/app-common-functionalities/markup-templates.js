@@ -27,7 +27,11 @@ function cardMarkup(moviename,movierating,moviegenre,movieimg,movieId) {
     ratingNode.innerHTML = ratingStarTemplate(movierating);
      return node;
 }
-  
 
+function insertTemplateMarkup() {
+    $('.header__placeholder').load('./templates/header.html',function(){});
+    $('.card__template').load('./templates/card-template.html',function(){});
+    $('.popup__template').load('./templates/popup.html',function(){});
+}
 
-export {cardMarkup}
+export {cardMarkup,insertTemplateMarkup}

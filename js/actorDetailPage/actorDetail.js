@@ -1,9 +1,11 @@
 import { getActorDetails,getActorFilmographyDetails} from '../app-common-functionalities/load-movie-data.js';
 import {addMovieCards} from './actorCardMarkup.js';
 import { getActorId } from './castId.js';
+import { insertTemplateMarkup } from '../app-common-functionalities/markup-templates.js';
+
 const POSTER_PATH_PREFIX = 'https://image.tmdb.org/t/p/w500';
 
-
+insertTemplateMarkup();
 function getActordata(cast_id){
     let filmogrphydetail =getActorFilmographyDetails(cast_id);
     getActorDetails(cast_id).then(res => {

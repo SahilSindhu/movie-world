@@ -10,7 +10,6 @@ const POSTER_PATH_PREFIX =`https://image.tmdb.org/t/p/w500/`;
 let home_page_movie_rows; 
 export function createRow(rowData,idx,genre){
     home_page_movie_rows = document.querySelectorAll('.movie__list');
-    console.log(rowData);
     home_page_movie_rows[idx].innerHTML ='';
 
     rowData.forEach((ele,index) => {

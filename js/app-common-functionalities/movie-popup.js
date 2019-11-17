@@ -30,7 +30,6 @@ export var movieQuickView ={
                                             movie_director = ele.name;
                                         }
                                     });
-
                                     this.movieDetailOverlay();
                                     this.populateOverlay(movie_name,poster_path,movie_overview,movie_genre,movie_cast,movie_director,movie_rating);
                                 

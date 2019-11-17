@@ -7,3 +7,23 @@
     width: 85%;
     margin : 0 auto 30px;
 }
+.search__box{
+    padding: 0.5rem 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    outline: 1px solid grey;
+    max-width: 30rem;
+    width: 100%;
+    margin-right: 0;
+}
+.search__button{
+    padding: 0.4rem 1.25rem;
+    font-size: 1.25rem;
+    position: relative;
+    left: -0.18rem;
+    background: blue;
+    color: white;
+    outline: 1px solid blue;
+    border-color: transparent;
+    top: 1px;
+}
