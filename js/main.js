@@ -16,16 +16,15 @@ import { insertTemplateMarkup } from './app-common-functionalities/markup-templa
     
     let homePageApi = [api_urls.LATEST_MOVIES_API,api_urls.POPULAR_MOVIE_API,api_urls.TRENDING_MOVIES_API];
     let genreData =[];
-    let genre_promise = loadMovieData(api_urls.GENRE_API).then(res => genreData.push(res));
+    let genre_promise = loadMovieData(api_urls.GENRE_API).then(single_genre => genreData.push(single_genre));
 
     insertTemplateMarkup();
   
 
-    homePageApi.forEach((url,idx )=>{
-        loadMovieData(url).then(res => genre_promise.then(()=>{
-                    allData.push(res.results);
-
-                    createRow(res.results.slice(0,4),idx,genreData[0].genres)
+    homePageApi.forEach((api_url,api_index )=>{
+        loadMovieData(api_url).then(api_response => genre_promise.then(()=>{
+                    allData.push(api_response.results);
+                    createRow(api_response.results.slice(0,4),api_index,genreData[0].genres)
                     if(allData.length == '3'){
                         localStorage.setItem('localMovieDB',JSON.stringify(allData));
                         localStorage.setItem('localGenreDb',JSON.stringify(genreData[0].genres))

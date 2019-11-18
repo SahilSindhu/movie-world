@@ -24,7 +24,8 @@ export function createRow(rowData,idx,genre){
 function  createMovieCard(singleMovie,idx,movieGenreName){
   
     let rating = Math.floor(singleMovie.vote_average/2);
-    let single_card_markup =cardMarkup(singleMovie.title,rating,movieGenreName,`${POSTER_PATH_PREFIX}/${singleMovie.poster_path}`,singleMovie.id);
+   
+    let single_card_markup =cardMarkup(singleMovie.title,rating,movieGenreName,`${POSTER_PATH_PREFIX}/${singleMovie.backdrop_path}`,singleMovie.id);
     
     home_page_movie_rows[idx].insertAdjacentElement('beforeend',single_card_markup);
 

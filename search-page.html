@@ -29,7 +29,15 @@
             <form onsubmit="">
                 <input class="search__box querry-input" type="text" >
                 <button class="search__button" type="button"><i class="fa fa-search "></i></button>
-                <input class="rating-range" type="range" min='0' max='10' value='5'>
+                <input class="rating-range" list="range-value" type="range" min='0' max='10' value='5'>
+
+                <datalist id="range-value">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </datalist>
             </form>
             <article class="movie__row latest">
                 <h3 class="movie__row__heading">Results</h3>

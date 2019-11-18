@@ -6,6 +6,12 @@
 
 
 .movie-container{
-    width: 85%;
-    margin: 0 auto 30px;
+    margin: 10px auto;
+    max-width: 1400px;
+}
+@media screen and (min-width : 768px){
+    .movie-container{
+        width: 85%;
+        margin: 30px auto;
+    }
 }
