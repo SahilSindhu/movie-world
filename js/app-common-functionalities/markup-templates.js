@@ -28,10 +28,29 @@ function cardMarkup(moviename,movierating,moviegenre,movieimg,movieId) {
      return node;
 }
 
+function addHeader() {
+    const link = document.querySelector('link#header').import;
+    const header = link.querySelector("header");
+    document.querySelector(".header__placeholder").appendChild(header);
+}
+function addPopup() {
+    const link = document.querySelector('link#popup').import;
+    const popup = link.querySelector("#movie__modal");
+    document.querySelector(".header__placeholder").appendChild(popup);
+}
+function addCardTemplate() {
+    const link = document.querySelector('link#card__template').import;
+    const card = link.querySelector("#latest-movies");
+    document.querySelector(".header__placeholder").appendChild(card);
+}
+
 function insertTemplateMarkup() {
-    $('.header__placeholder').load('./templates/header.html',function(){});
-    $('.card__template').load('./templates/card-template.html',function(){});
-    $('.popup__template').load('./templates/popup.html',function(){});
+    if(document.querySelector(".header__placeholder"))
+                                        addHeader();
+    if(document.querySelector(".popup__template"))
+                                        addPopup();
+    if(document.querySelector(".card__template"))
+                                        addCardTemplate();
 }
 
 export {cardMarkup,insertTemplateMarkup}

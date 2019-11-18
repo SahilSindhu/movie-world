@@ -18,9 +18,10 @@ import { insertTemplateMarkup } from './app-common-functionalities/markup-templa
     let genreData =[];
     let genre_promise = loadMovieData(api_urls.GENRE_API).then(single_genre => genreData.push(single_genre));
 
-    insertTemplateMarkup();
   
 
+    insertTemplateMarkup();
+    
     homePageApi.forEach((api_url,api_index )=>{
         loadMovieData(api_url).then(api_response => genre_promise.then(()=>{
                     allData.push(api_response.results);

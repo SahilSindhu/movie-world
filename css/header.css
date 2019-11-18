@@ -1,7 +1,11 @@
 @import './variable.css';
+.app__header{
+    background: var(--header-background-color);
+    width: 100%;
+}
+
 .menu{
     display: flex;
-    background: var(--header-background-color);
     color: white;
     height: 50px;
     font-family: var(--primary-font-family);
@@ -9,6 +13,8 @@
     box-sizing: border-box;
     padding:20px;
     justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .logo__link{

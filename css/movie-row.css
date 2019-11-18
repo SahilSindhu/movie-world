@@ -60,6 +60,7 @@ first styling for mobile devices
 
 .movie__name{
         font-size: var(--large-font-size);
+        font-weight: 600;
 }
 .movie__genre{
         font-size: var(--small-font-size);
@@ -72,8 +73,8 @@ first styling for mobile devices
 .fa-heart-o:hover{
         cursor: pointer;
 }
-.star-rating{
-        font-size: 10px ;
+.fa-star,.fa-star-o{
+        font-size: 15px ;
 }
 .favorite-movie{
         color : red;

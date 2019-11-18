@@ -1,6 +1,7 @@
 import { createRow } from '../app-common-functionalities/movie-row.js';
 import { getMovieDB } from './getMovieDB.js';
 import { movieQuickView } from '../app-common-functionalities/movie-popup.js';
+import{ insertTemplateMarkup } from '../app-common-functionalities/markup-templates.js';
 
 var querryField = document.querySelector('input');
 var rating_range = document.querySelector('.rating-range');
@@ -12,8 +13,7 @@ var data = getMovieDB();
 var localMovieDb =data[0];
 var localGenreDb = data[1];
 
-console.log(localMovieDb)
-console.log(localGenreDb)
+insertTemplateMarkup();
 // movieQuickView.addMovieEventListener()
 
 createRow(localMovieDb.filter((ele) => {return ele.vote_average >= rating}),0,localGenreDb);

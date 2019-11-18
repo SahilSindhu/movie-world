@@ -63,7 +63,7 @@ export var movieQuickView ={
                                 modal.querySelector('.modal__genre td').innerHTML = movie_genre.join(',');
                                 modal.querySelector('.modal__cast td').innerHTML = movie_cast.join(',');
                                 modal.querySelector('.modal__director td').innerHTML = movie_director;
-                                modal.querySelector('.modal__rating-stars').insertAdjacentHTML('beforeend',rating_stars);
+                                modal.querySelector('.modal__rating-stars').innerHTML = rating_stars;
               
                         }
                         

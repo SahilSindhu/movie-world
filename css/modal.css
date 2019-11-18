@@ -4,14 +4,18 @@
         left: 0;
         top: 0;
         width: 100vw;
-        height: 100%; 
+        height: 100vh; 
         display: none; 
         background-color: rgba(0,0,0,0.4); 
         padding-top:50px;
 }
+.modal__content{
+  position: relative;
+  top: 5%;
+}
 .movie__content{
-        width:60%;
-        padding-left: 1.3em;
+        width:100%;
+        padding-top: 1.3em;
 }
 .modal__header {
       display: flex;
@@ -64,8 +68,7 @@
     overflow: hidden;
 }
 .modal__image{
-    max-width: 100%;
-    min-height: 80%;
+   width: 100%;
 }
 
 
@@ -77,16 +80,25 @@
     border: 1px solid #888;
     width: 100%;
   }
-  @media screen and (min-width : 768px){
-    .modal__desc{
-      flex-direction: row;
-    }
-    .modal__desc .movie__figure{
-      width: 40%;
-    }
-    .modal__content {
-      width: 60%;
-    }
+  @media screen and (min-width : 992px){
+        .modal__desc{
+          flex-direction: row;
+        }
+        .modal__desc .movie__figure{
+          width: 40%;
+        }
+        .modal__content {
+          width: 60%;
+        }
+        .movie__content{
+          padding-top: 0;
+          padding-left: 1.3em;
+        }
+        .modal__image{
+          max-width: 100%;
+          width: 100%;
+          min-height: 80%;
+        }
   } 
   .modal__row td{
     padding: 5px 0;
