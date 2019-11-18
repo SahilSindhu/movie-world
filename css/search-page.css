@@ -6,7 +6,26 @@
 
 .search-main{
     width: 85%;
-    margin : 0 auto 30px;
+    margin : 30px auto;
+}
+.search__form{
+    display: flex;
+    align-items: center;
+}
+.search__container{
+    width: 60%;
+}
+.range__container{
+  width : 40%;
+  display: flex;
+  flex-direction: column;
+}
+.range__list{
+  display: flex;
+  justify-content: space-between;
+}
+.range__item{
+  display: inline;
 }
 .search__box{
     padding: 0.5rem 0.75rem;
@@ -14,7 +33,7 @@
     font-weight: 500;
     outline: 1px solid grey;
     max-width: 30rem;
-    width: 100%;
+    width: 65%;
     margin-right: 0;
 }
 .search__button{
@@ -26,7 +45,7 @@
     color: white;
     outline: 1px solid blue;
     border-color: transparent;
-    top: 1px;
+    top: 2px;
 }
 
 /* range styelin */
@@ -36,7 +55,7 @@ input[type=range] {
     height: 32px;
     -webkit-appearance: none;
     margin: 10px 0;
-    width: 30%;
+    width: 100%;
     float: right;
   }
   input[type=range]:focus {

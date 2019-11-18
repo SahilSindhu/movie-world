@@ -18,18 +18,21 @@
          <article class="header__placeholder"></article>
 
     <main class="search-main">
-            <form onsubmit="">
-                <input class="search__box querry-input" type="text" >
-                <button class="search__button" type="button"><i class="fa fa-search "></i></button>
-                <input class="rating-range" list="range-value" type="range" min='0' max='10' value='5'>
-
-                <datalist id="range-value">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </datalist>
+            <form class="search__form" onsubmit="">
+                <div class="search__container">
+                    <input class="search__box querry-input" type="text" >
+                    <button class="search__button" type="button"><i class="fa fa-search "></i></button>
+                </div>
+                <div class="range__container">
+                    <input class="range__input rating__range" list="range-value" type="range" min='1' max='5' value='2'>
+                    <ul class="range__list">
+                        <li class="range__item">1</li>
+                        <li class="range__item">2</li>
+                        <li class="range__item">3</li>
+                        <li class="range__item">4</li>
+                        <li class="range__item">5</li>
+                    </ul>
+                </div>
             </form>
             <article class="movie__row latest">
                 <h3 class="movie__row__heading">Results</h3>
