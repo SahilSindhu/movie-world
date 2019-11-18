@@ -9,7 +9,7 @@
     margin: 10px auto;
     max-width: 1400px;
 }
-@media screen and (min-width : 768px){
+@media screen and (min-width : 480px){
     .movie-container{
         width: 85%;
         margin: 30px auto;

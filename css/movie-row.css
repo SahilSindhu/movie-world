@@ -108,6 +108,12 @@ first styling for mobile devices
     .movie-card{
         width: 40%;
     }
+    .movie__row__heading{
+        background: transparent;
+        color: black;
+        padding: 0;
+        padding-bottom: 0.5em;
+    }
 }
 
 /* 
@@ -131,12 +137,7 @@ first styling for mobile devices
     .trending__list .movie__details{
         padding-bottom : 35px;
     }
-    .movie__row__heading{
-        background: transparent;
-        color: black;
-        padding: 0;
-        padding-bottom: 0.5em;
-    }
+   
 }
 
 @media screen and (min-width:992px){
