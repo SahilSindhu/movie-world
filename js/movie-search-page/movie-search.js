@@ -30,11 +30,22 @@ function filterMovieData(){
                 x.add(ele.id)
             }
         });
-        console.log(x)
-        filtererdData = localMovieDb.filter((ele) => {return ele.title.toLowerCase().includes(userGivenValue.toLowerCase())
-                                                                && ele.vote_average >= rating || ele.genre_ids.includes(200)
-                                                    });
+        let y =new Set();
+        localMovieDb.forEach((ele,idx) =>{
+            x.forEach((genre)=>{
+                if(ele.genre_ids.indexOf(genre) != -1){
+                    y.add(ele)
+                }
+            })
+        })
         
+        let z = [...y]
+        filtererdData = localMovieDb.filter((ele) => {return ((ele.title.toLowerCase().includes(userGivenValue.toLowerCase()) 
+                                                               || z.indexOf(ele) != -1)
+                                                               && ele.vote_average >= rating)
+                                                    });
+
+                                                    
         createRow(filtererdData,0,localGenreDb); 
     }
     else
@@ -54,3 +65,4 @@ rating_range.addEventListener('change',()=>{
     
 });
 querryField.addEventListener('keyup',filterMovieData);
+movieQuickView.addMovieEventListener();
