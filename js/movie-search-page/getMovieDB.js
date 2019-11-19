@@ -12,5 +12,4 @@ export function getMovieDB(){
             });
         }
         return [localMovieDb,localGenreDb]
-
 }

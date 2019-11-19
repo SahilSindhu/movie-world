@@ -16,6 +16,7 @@ var localGenreDb = data[1];
 
 insertTemplateMarkup();
 createRow(localMovieDb.filter((ele) => {return Math.floor(ele.vote_average/2) >= rating}),0,localGenreDb);
+
 document.querySelectorAll('.menu__item ').forEach(item => item.classList.toggle('menu__item--active'))
 
 // createRow(localMovieDb,rating)
@@ -24,12 +25,14 @@ function filterMovieData(){
     rating =rating_range.value;
     if(userGivenValue != ''){
         let matchedGenre = [...getMatchedGenre(userGivenValue,localGenreDb,localMovieDb)];
-        filtererdData = localMovieDb.filter((ele) => {return ((ele.title.toLowerCase().includes(userGivenValue.toLowerCase()) 
+        filtererdData = localMovieDb.filter((ele) => {return ((ele.title.toLowerCase()
+                                                                .includes(userGivenValue.toLowerCase()) 
                                                                || matchedGenre.indexOf(ele) != -1)
                                                                && Math.floor(ele.vote_average/2) >= rating)
                                                     });
         
         createRow(filtererdData,0,localGenreDb); 
+       
         if(!filtererdData.length){
             document.querySelector('.error__message').classList.remove('error__hide');
         }else{
@@ -41,14 +44,14 @@ function filterMovieData(){
     else{
         let filtererdData = localMovieDb.filter((ele) => {return Math.floor(ele.vote_average/2) >= rating})
         
-            createRow(filtererdData,0,localGenreDb); 
-        
-            if(!filtererdData.length){
-                document.querySelector('.error__message').classList.remove('error__hide');
-            }else{
-                if(!document.querySelector('.error__message').classList.contains('error__hide'))
-                    document.querySelector('.error__message').classList.add('error__hide');
-            }
+        createRow(filtererdData,0,localGenreDb); 
+    
+        if(!filtererdData.length){
+            document.querySelector('.error__message').classList.remove('error__hide');
+        }else{
+            if(!document.querySelector('.error__message').classList.contains('error__hide'))
+                document.querySelector('.error__message').classList.add('error__hide');
+        }
         
     }
       

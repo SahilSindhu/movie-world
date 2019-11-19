@@ -67,6 +67,7 @@
     justify-content: flex-start;
     margin:10px;
     overflow: hidden;
+    font-family: 'Roboto', sans-serif;
 }
 .movie__card{
     max-width: 25%;
@@ -79,8 +80,6 @@
 .movie__card p{
     font-size: 1em;
     padding: 8px;
-    font-family: sans-serif;
-    font-weight: 500;
 }
 
 @media screen and (min-width : 768px){
