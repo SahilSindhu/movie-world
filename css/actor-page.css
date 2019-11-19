@@ -1,7 +1,6 @@
 @import './reset.css';
 @import './variable.css';
 @import './header.css';
-@import './global.css';
 
 .actor__intro{
     display: flex;
@@ -23,16 +22,23 @@
 
 .actor__biography{
     width: 100%;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+    padding: 10px;
+    line-height: 1.5;
+    font-size: 1em;
 }
 
 .actor__title{
-    font-size: 1.3em;
+    font-size: 1.6em;
     margin-bottom: 10px;
     font-family: sans-serif;
 }
-.actor__dob{
-    font-size: 0.8em;
+.actor__dob__holder{
     margin-bottom: 10px;
+}
+.actor__dob{
+    font-size: 1em;
 }
 .actor__description{
     font-size: 1em;
@@ -43,16 +49,16 @@
     margin: 0 auto;
 }
 .filmography__heading{
-    font-size: 1.7em;
-    font-weight: 600;
+    font-size:2em;
+    font-weight: 700;
     margin : 10px 0 30px;
     font-family: sans-serif;
 }
 
 .movie__year__heading{
-    font-size: 1.3em;
+    font-size: 1.5em;
     padding : 15px 5px;
-    background: lightgray;
+    background: #F0F0F0;
     border-radius: 5px;
 }
 .card__holder{
@@ -66,6 +72,9 @@
     max-width: 25%;
     width: 25%;
     overflow: hidden;
+}
+.movie__title{
+    display: inline;
 }
 .movie__card p{
     font-size: 1em;

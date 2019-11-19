@@ -6,17 +6,20 @@ import { insertTemplateMarkup } from '../app-common-functionalities/markup-templ
 const POSTER_PATH_PREFIX = 'https://image.tmdb.org/t/p/w500';
 
 insertTemplateMarkup();
+console.log('actor detail page')
 function getActordata(cast_id){
     let filmogrphydetail =getActorFilmographyDetails(cast_id);
+    console.log(filmogrphydetail)
     getActorDetails(cast_id).then(res => {
         let actor_name = res.name;
         let actor_birthday = res.birthday;
         let actor_biography = res.biography;
         let actor_profile_image = res.profile_path;
         let actor_rating = res.popularity;
-        console.log(res)
+       
         filmogrphydetail.then((res)=>{
             populateActorDetailMarkup(actor_name,actor_birthday,actor_biography,actor_profile_image,actor_rating)
+            console.log(res)
             addMovieCards(res);
          } )
     })

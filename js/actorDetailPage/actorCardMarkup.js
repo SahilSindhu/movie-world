@@ -1,8 +1,14 @@
 export function addMovieCards(res) {
     
     let dateSet = new Set();
-    let dateArray = []
-    res.cast.forEach((ele )=>{dateSet.add(ele.release_date.substr(0,4))});
+    let dateArray = new Array();
+
+    res.cast.forEach((ele )=>{
+        if(ele.release_date){
+            dateSet.add(ele.release_date.substr(0,4))
+        }
+       
+    });
    
     dateArray = [...dateSet];
     dateArray.sort().reverse().forEach((ele)=>{
@@ -17,7 +23,10 @@ export function addMovieCards(res) {
 
         
         let specificMovie = res.cast.filter(element =>{
-            return element.release_date.substr(0,4) == ele;
+            if(element.release_date){
+                return element.release_date.substr(0,4) == ele;
+            }
+            
         })
         specificMovie.forEach(ele =>{
             addSingleCard(ele);
