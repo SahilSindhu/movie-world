@@ -1,5 +1,5 @@
 import {cardMarkup} from './markup-templates.js';
-import { getGenre } from '../app-common-functionalities/getGenre.js';
+import { getGenre } from './getGenre.js';
 
 const POSTER_PATH_PREFIX =`https://image.tmdb.org/t/p/w500/`;
 

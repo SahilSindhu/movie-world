@@ -1,4 +1,4 @@
-import { ratingStarTemplate } from '../app-common-functionalities/rating-star.js';
+import { ratingStarTemplate } from '../common-functionalities/rating-star.js';
 
 const POSTER_PATH_PREFIX = 'https://image.tmdb.org/t/p/w500/';
 

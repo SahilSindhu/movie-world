@@ -1,12 +1,13 @@
-import { getActorDetails,getActorFilmographyDetails} from '../app-common-functionalities/load-movie-data.js';
+import { getActorDetails,getActorFilmographyDetails} from '../common-functionalities/load-movie-data.js';
 import {addMovieCards} from './actorCardMarkup.js';
 import { getActorId } from './castId.js';
-import { insertTemplateMarkup } from '../app-common-functionalities/markup-templates.js';
+import { insertTemplateMarkup } from '../common-functionalities/markup-templates.js';
 
 const POSTER_PATH_PREFIX = 'https://image.tmdb.org/t/p/w500';
-
 insertTemplateMarkup();
-console.log('actor detail page')
+
+
+
 function getActordata(cast_id){
     let filmogrphydetail =getActorFilmographyDetails(cast_id);
     console.log(filmogrphydetail)
@@ -36,7 +37,6 @@ function populateActorDetailMarkup(actor_name,actor_birthday,actor_biography,act
     actor_dob.append(document.createTextNode(actor_birthday))
     actor_description.append(document.createTextNode(actor_biography))
     actor_image.setAttribute('src',`${POSTER_PATH_PREFIX}${actor_profile_image}`);
-   
 }
 
 

@@ -1,7 +1,7 @@
-import { createRow } from '../app-common-functionalities/movie-row.js';
+import { createRow } from '../common-functionalities/movie-row.js';
 import { getMovieDB } from './getMovieDB.js';
-import { movieQuickView } from '../app-common-functionalities/movie-popup.js';
-import{ insertTemplateMarkup } from '../app-common-functionalities/markup-templates.js';
+import { movieQuickView } from '../common-functionalities/movie-popup.js';
+import{ insertTemplateMarkup } from '../common-functionalities/markup-templates.js';
 
 var querryField = document.querySelector('input');
 var rating_range = document.querySelector('.rating__range');
