@@ -7,25 +7,21 @@ const POSTER_PATH_PREFIX = 'https://image.tmdb.org/t/p/w500';
 insertTemplateMarkup();
 
 
-
 function getActordata(cast_id){
-    let filmogrphydetail =getActorFilmographyDetails(cast_id);
-    console.log(filmogrphydetail)
-    getActorDetails(cast_id).then(res => {
-        let actor_name = res.name;
-        let actor_birthday = res.birthday;
-        let actor_biography = res.biography;
-        let actor_profile_image = res.profile_path;
-        let actor_rating = res.popularity;
-       
-        filmogrphydetail.then((res)=>{
-            populateActorDetailMarkup(actor_name,actor_birthday,actor_biography,actor_profile_image,actor_rating)
-            console.log(res)
-            addMovieCards(res);
-         } )
+    let filmogrphyDetail =getActorFilmographyDetails(cast_id);
+    let actorDetail =getActorDetails(cast_id)
+    Promise.all([filmogrphyDetail,actorDetail]).then((response)=>{
+        let actor_name = response[1].name;
+        let actor_birthday = response[1].birthday;
+        let actor_biography = response[1].biography;
+        let actor_profile_image = response[1].profile_path;
+        let actor_rating = response[1].popularity;
+
+        populateActorDetailMarkup(actor_name,actor_birthday,actor_biography,actor_profile_image,actor_rating);
+        addMovieCards(response[0])
     })
-   
 }
+
 function populateActorDetailMarkup(actor_name,actor_birthday,actor_biography,actor_profile_image,actor_rating,movie_name){
     let actor_image = document.querySelector('.actor__image');
     let actor_title = document.querySelector('.actor__title');

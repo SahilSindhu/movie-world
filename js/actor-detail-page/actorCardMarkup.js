@@ -7,7 +7,6 @@ export function addMovieCards(res) {
         if(ele.release_date){
             dateSet.add(ele.release_date.substr(0,4))
         }
-       
     });
    
     dateArray = [...dateSet];
@@ -15,6 +14,8 @@ export function addMovieCards(res) {
         
         let template = document.getElementById("filmList");
         let movieRow = template.content.querySelector(".actor__movie__year");
+       
+
         let node = document.importNode(movieRow, true);
 
         let year = node.querySelector('.movie__year__heading');

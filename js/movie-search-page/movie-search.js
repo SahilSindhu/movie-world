@@ -1,7 +1,8 @@
 import { createRow } from '../common-functionalities/movie-row.js';
 import { getMovieDB } from './getMovieDB.js';
 import { movieQuickView } from '../common-functionalities/movie-popup.js';
-import{ insertTemplateMarkup } from '../common-functionalities/markup-templates.js';
+import { insertTemplateMarkup } from '../common-functionalities/markup-templates.js';
+import { getMatchedGenre } from './getMatchedGenre.js';
 
 var querryField = document.querySelector('input');
 var rating_range = document.querySelector('.rating__range');
@@ -22,32 +23,35 @@ function filterMovieData(){
     let userGivenValue = document.querySelector('input').value;
     rating =rating_range.value;
     if(userGivenValue != ''){
-        let x = new Set()
-         localGenreDb.forEach(ele =>{
-            if( ele.name.toLowerCase().includes(userGivenValue.toLowerCase())){
-                x.add(ele.id)
-            }
-        });
-        let y =new Set();
-        localMovieDb.forEach((ele,idx) =>{
-            x.forEach((genre)=>{
-                if(ele.genre_ids.indexOf(genre) != -1){
-                    y.add(ele)
-                }
-            })
-        })
-        
-        let z = [...y]
+        let matchedGenre = [...getMatchedGenre(userGivenValue,localGenreDb,localMovieDb)];
         filtererdData = localMovieDb.filter((ele) => {return ((ele.title.toLowerCase().includes(userGivenValue.toLowerCase()) 
-                                                               || z.indexOf(ele) != -1)
+                                                               || matchedGenre.indexOf(ele) != -1)
                                                                && Math.floor(ele.vote_average/2) >= rating)
                                                     });
-
-                                                    
+        
         createRow(filtererdData,0,localGenreDb); 
+        if(!filtererdData.length){
+            document.querySelector('.error__message').classList.remove('error__hide');
+        }else{
+            if(!document.querySelector('.error__message').classList.contains('error__hide'))
+                document.querySelector('.error__message').classList.add('error__hide');
+        }
+        
     }
-    else
-        createRow(localMovieDb.filter((ele) => {return Math.floor(ele.vote_average/2) >= rating}),0,localGenreDb); 
+    else{
+        let filtererdData = localMovieDb.filter((ele) => {return Math.floor(ele.vote_average/2) >= rating})
+        
+            createRow(filtererdData,0,localGenreDb); 
+        
+            if(!filtererdData.length){
+                document.querySelector('.error__message').classList.remove('error__hide');
+            }else{
+                if(!document.querySelector('.error__message').classList.contains('error__hide'))
+                    document.querySelector('.error__message').classList.add('error__hide');
+            }
+        
+    }
+      
     
 }
 submitButton.addEventListener('click',filterMovieData);

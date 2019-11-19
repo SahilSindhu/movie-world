@@ -12,10 +12,12 @@ export function createRow(rowData,idx,genre){
     home_page_movie_rows = document.querySelectorAll('.movie__list');
     home_page_movie_rows[idx].innerHTML ='';
 
-    rowData.forEach((ele,index) => {
-        let movieGenreName = getGenre(ele.genre_ids,genre);
-            createMovieCard(ele,idx,movieGenreName);
-    });
+    if(rowData.length != 0){
+        rowData.forEach((ele,index) => {
+            let movieGenreName = getGenre(ele.genre_ids,genre);
+                createMovieCard(ele,idx,movieGenreName.slice(0,3));
+        });
+    }
 }
 
 /*

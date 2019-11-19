@@ -70,12 +70,11 @@ first styling for mobile devices
         font-size: 0.8em;
         text-decoration: underline;
 }
-.fa-heart-o:hover{
+.fa-heart{
+        color: gray;
         cursor: pointer;
 }
-.fa-star,.fa-star-o{
-        font-size: 15px ;
-}
+
 .favorite-movie{
         color : red;
         transition : 0.5s;
@@ -83,6 +82,12 @@ first styling for mobile devices
 .favorite-movie:active{
         animation-name: scaleanimation;
         animation-duration: 0.2s;
+}
+.fa-star{
+        color: darkorange;
+}
+.fa-star,.fa-star-o{
+        font-size: 15px ;
 }
 .movie__showmore-link a{
         color : dodgerblue;

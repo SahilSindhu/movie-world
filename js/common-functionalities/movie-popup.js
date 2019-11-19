@@ -9,7 +9,7 @@ export var movieQuickView ={
                                     if(evt.target.classList.contains('movie__figure__poster')){
                                         this.getQuickViewData(evt.target.getAttribute('data-movie-id'));
                                     }
-                                    if(evt.target.classList.contains('fa-heart-o')){
+                                    if(evt.target.classList.contains('fa-heart')){
                                         evt.target.classList.toggle('favorite-movie');
                                     }
                                 })

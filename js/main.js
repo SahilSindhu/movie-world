@@ -32,7 +32,6 @@ import { insertTemplateMarkup } from './common-functionalities/markup-templates.
                             localStorage.setItem('localGenreDb',JSON.stringify(genreData[0].genres));
                         }
                     }
-                    
                 })
 
     
