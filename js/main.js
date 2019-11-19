@@ -1,7 +1,7 @@
 import { loadMovieData } from './app-common-functionalities/load-movie-data.js';
 import { createRow } from './app-common-functionalities/movie-row.js';
 import { movieQuickView } from './app-common-functionalities/movie-popup.js';
-import {api_urls} from './app-common-functionalities/constants/api-urls.js';
+import {apiUrls} from './app-common-functionalities/constants/api-urls.js';
 import { allData } from './app-common-functionalities/constants/allData.js';
 import { insertTemplateMarkup } from './app-common-functionalities/markup-templates.js';
 /*
@@ -14,31 +14,29 @@ import { insertTemplateMarkup } from './app-common-functionalities/markup-templa
 */
 (function(){
     
-    let homePageApi = [api_urls.LATEST_MOVIES_API,api_urls.POPULAR_MOVIE_API,api_urls.TRENDING_MOVIES_API];
-    let genreData =[];
-    let genre_promise = loadMovieData(api_urls.GENRE_API).then(single_genre => genreData.push(single_genre));
-
-  
+    let homePageApi = [apiUrls.LATEST_MOVIES_API,
+                       apiUrls.POPULAR_MOVIE_API,
+                       apiUrls.TRENDING_MOVIES_API];
+    let genreData =new Array();
+    let genrePromise = loadMovieData(apiUrls.GENRE_API).then(singleGenre => genreData.push(singleGenre));
 
     insertTemplateMarkup();
-    
-    homePageApi.forEach((api_url,api_index )=>{
-        loadMovieData(api_url).then(api_response => genre_promise.then(()=>{
-                    allData.push(api_response.results);
-                    createRow(api_response.results.slice(0,4),api_index,genreData[0].genres)
+    movieQuickView.addMovieEventListener();
+
+
+    homePageApi.forEach((apiUrl,api_index )=>{
+                    loadMovieData(apiUrl)
+                    .then(apiResponse => genrePromise.then(()=>{
+                    allData.push(apiResponse.results);
+                    createRow(apiResponse.results.slice(0,4),api_index,genreData[0].genres)
                     if(allData.length == '3'){
                         localStorage.setItem('localMovieDB',JSON.stringify(allData));
-                        localStorage.setItem('localGenreDb',JSON.stringify(genreData[0].genres))
-                   }
+                        localStorage.setItem('localGenreDb',JSON.stringify(genreData[0].genres));
+                    }
                 }
         ));
     })
-    
-    /* 
-        apply listeners for quickview overlay and implements functionality
-        to get moviedata data using voie id
-    */
-   movieQuickView.addMovieEventListener();
+  
 })();
 
 

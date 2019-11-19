@@ -1,18 +1,9 @@
 import { ratingStarTemplate } from '../app-common-functionalities/rating-star.js';
-import { getMovieDetails,getSimilarMovieDetails,loadMovieData } from '../app-common-functionalities/load-movie-data.js';
-import { movieQuickView } from '../app-common-functionalities/movie-popup.js';
+
 const POSTER_PATH_PREFIX = 'https://image.tmdb.org/t/p/w500/';
 
-export async function getMovieData(id){
-    const movieDetails = await getMovieDetails(id);
 
-    populateDetail(movieDetails);
-    //add qucick view overlay
-    movieQuickView.addMovieEventListener();
-
-}
-
-function populateDetail(movieDetails){
+export function populateDetail(movieDetails){
     let details_node = document.querySelector('#main-details');
     let moviePoster = details_node.querySelector('.banner_image');
     let description = details_node.querySelector('.movie__detail__description');
