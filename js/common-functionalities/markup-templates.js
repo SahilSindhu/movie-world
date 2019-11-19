@@ -31,21 +31,21 @@ function cardMarkup(moviename,movierating,moviegenre,movieimg,movieId) {
 function addHeader() {
     const link = document.querySelector('link#header').import;
     const header = link.querySelector("header");
-    document.querySelector(".header__placeholder").appendChild(header);
+    document.querySelector(".header__container").appendChild(header);
 }
 function addPopup() {
     const link = document.querySelector('link#popup').import;
     const popup = link.querySelector("#movie__modal");
-    document.querySelector(".header__placeholder").appendChild(popup);
+    document.querySelector(".popup__template").appendChild(popup);
 }
 function addCardTemplate() {
     const link = document.querySelector('link#card__template').import;
     const card = link.querySelector("#latest-movies");
-    document.querySelector(".header__placeholder").appendChild(card);
+    document.querySelector(".card__template").appendChild(card);
 }
 
 function insertTemplateMarkup() {
-    if(document.querySelector(".header__placeholder"))
+    if(document.querySelector(".header__container"))
                                         addHeader();
     if(document.querySelector(".popup__template"))
                                         addPopup();

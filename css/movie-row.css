@@ -25,7 +25,7 @@ first styling for mobile devices
         transition:width 0.6s,box-shadow 0.6s;
 }
 .movie-card:hover{
-        box-shadow: 0px 0px 4px black;
+        box-shadow: 0px 0px 3px black;
 }
 .movie-card:hover .movie__figure__poster{
         transform: scale3d(1.05,1.05,1.05);
@@ -39,6 +39,7 @@ first styling for mobile devices
         height: 170px;
         cursor: pointer;
         transition: 0.6s;
+        transform: scale3d(1.1,1.1,1.1);
 }
 
 

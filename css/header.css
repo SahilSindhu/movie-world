@@ -29,7 +29,7 @@
 }
 
 .menu__item{
-    padding: 17px 20px;
+    padding: 15px 20px;
     outline: none;
 }
 
@@ -53,6 +53,6 @@
         justify-content: flex-start;
     }
     .menu__item{
-        padding: 17px 50px;
+        padding: 15px 50px;
     }
 }

@@ -1,3 +1,7 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
 .movie-container{
     margin: 10px auto;
     max-width: 1400px;

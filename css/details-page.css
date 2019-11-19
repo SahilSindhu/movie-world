@@ -10,11 +10,14 @@
 }
 .movie__poster {
     width: 100%;
-    height: 60vh;
+    height: 80vh;
+    object-fit: cover;
 }
 .movie__details {
     width: 100%;
     display: flex;
+    
+    line-height: 1.5;
 }
 .movie__description{
     display: flex;
@@ -88,5 +91,8 @@
 .movie__info a:hover{
     color:dodgerblue;
 }
-
+.movie__figure__poster{
+    -webkit-transform: scale3d(1.1,1.1,1.1);
+    transform: scale3d(1.1,1.1,1.1);
+}
 /* inner movie detail page end here */
