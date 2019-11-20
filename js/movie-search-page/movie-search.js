@@ -13,7 +13,7 @@ var filtererdData =new Array();
 var data = getMovieDB();
 var localMovieDb =data[0];
 var localGenreDb = data[1];
-
+let errorNode = document.querySelector('.error__message');
 insertTemplateMarkup();
 createRow(localMovieDb.filter((ele) => {return Math.floor(ele.vote_average/2) >= rating}),0,localGenreDb);
 
@@ -31,27 +31,27 @@ function filterMovieData(){
                                                                && Math.floor(ele.vote_average/2) >= rating)
                                                     });
         
-        createRow(filtererdData,0,localGenreDb); 
+        createRow(filtererdData,0,localGenreDb,errorNode); 
        
-        if(!filtererdData.length){
-            document.querySelector('.error__message').classList.remove('error__hide');
-        }else{
-            if(!document.querySelector('.error__message').classList.contains('error__hide'))
-                document.querySelector('.error__message').classList.add('error__hide');
-        }
+        // if(!filtererdData.length){
+        //     document.querySelector('.error__message').classList.remove('error__hide');
+        // }else{
+        //     if(!document.querySelector('.error__message').classList.contains('error__hide'))
+        //         document.querySelector('.error__message').classList.add('error__hide');
+        // }
         
     }
     else{
         let filtererdData = localMovieDb.filter((ele) => {return Math.floor(ele.vote_average/2) >= rating})
         
-        createRow(filtererdData,0,localGenreDb); 
+        createRow(filtererdData,0,localGenreDb,errorNode); 
     
-        if(!filtererdData.length){
-            document.querySelector('.error__message').classList.remove('error__hide');
-        }else{
-            if(!document.querySelector('.error__message').classList.contains('error__hide'))
-                document.querySelector('.error__message').classList.add('error__hide');
-        }
+        // if(!filtererdData.length){
+        //     document.querySelector('.error__message').classList.remove('error__hide');
+        // }else{
+        //     if(!document.querySelector('.error__message').classList.contains('error__hide'))
+        //         document.querySelector('.error__message').classList.add('error__hide');
+        // }
         
     }
       

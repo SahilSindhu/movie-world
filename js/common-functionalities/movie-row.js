@@ -8,7 +8,7 @@ const POSTER_PATH_PREFIX =`https://image.tmdb.org/t/p/w500/`;
                                     genre is list of all genre
 */
 let home_page_movie_rows; 
-export function createRow(rowData,idx,genre){
+export function createRow(rowData,idx,genre,errorNode){
     home_page_movie_rows = document.querySelectorAll('.movie__list');
     home_page_movie_rows[idx].innerHTML ='';
 
@@ -17,6 +17,14 @@ export function createRow(rowData,idx,genre){
             let movieGenreName = getGenre(ele.genre_ids,genre);
                 createMovieCard(ele,idx,movieGenreName.slice(0,3));
         });
+        if(errorNode && !errorNode.classList.contains('error__hide')){
+            errorNode.classList.add('error__hide')
+        }
+    }
+    else{
+        if(errorNode){
+            errorNode.classList.remove('error__hide')
+        }
     }
 }
 

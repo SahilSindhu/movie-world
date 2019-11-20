@@ -24,7 +24,13 @@ import { insertTemplateMarkup } from './common-functionalities/markup-templates.
                 .then((values)=>
                 {
                     for(let i=1;i<=values.length-1;i++){
-                         
+                        createRow(values[i].results.slice(0,4),i-1,genreData[0].genres);
+
+                        allData.push(values[i].results);
+                        if(allData.length == '3'){
+                            localStorage.setItem('localMovieDB',JSON.stringify(allData));
+                            localStorage.setItem('localGenreDb',JSON.stringify(genreData[0].genres));
+                        }
                     }
                 })
 
