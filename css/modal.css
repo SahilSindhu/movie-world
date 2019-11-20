@@ -11,19 +11,18 @@
 }
 .modal__content{
   position: relative;
-  top: 5%;
+  top: 0;
 }
 .movie__content{
-        width:100%;
+        width:90%;
         padding-top: 1.3em;
 }
 .modal__header {
       display: flex;
       flex-wrap: wrap;
-      margin-bottom: 15px;
       justify-content: space-between;
       border-bottom: 1px solid grey;
-      padding: 15px;
+      padding: 0.5em;
 }
 .modal__title{
       font-size: 22px;
@@ -50,16 +49,17 @@
 }
 
 .modal__body{
-       padding:15px;
+    padding: 0 1em;
 }
 .modal__desc {
       display: flex;
       flex-wrap: nowrap;
       width: 100%;
-      margin-bottom:25px;
+      padding-top: 10px;
       justify-content: flex-start;
       flex-direction: column;
 }
+
 
 
 .modal__desc .movie__figure {
@@ -80,7 +80,7 @@
     border: 1px solid #888;
     width: 100%;
   }
-  @media screen and (min-width : 992px){
+  @media screen and (min-width : 768px){
         .modal__desc{
           flex-direction: row;
         }
@@ -99,7 +99,24 @@
           width: 100%;
           min-height: 80%;
         }
-  } 
+  }
+  @media screen and (min-width:992px){
+    .modal__content{
+      top: 5%;
+    }
+    .modal__header{
+      margin-bottom: 1em;
+      padding :1em;
+    }
+    .modal__body{
+      padding:1em;
+    }
+    .modal__details{
+      margin-bottom: 1em;
+    }
+  }
+
+
   .modal__row td{
     padding: 5px 0;
   }
@@ -117,9 +134,6 @@
   .table__body{
       width:100%
   }
-  .modal__details {
-    margin-bottom: 15px;
-}
 
 .modal__footer{
   width: 100%;
