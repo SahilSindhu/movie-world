@@ -2,7 +2,7 @@ import { getMovieDetails } from './load-movie-data.js';
 import { ratingStarTemplate } from './rating-star.js';
 
 
-export var movieQuickView ={
+export let movieQuickView ={
     addMovieEventListener :function(){
                                 document.querySelectorAll('.movie__row').forEach((ele,idx)=>{
                                     ele.addEventListener('click',(evt)=>{

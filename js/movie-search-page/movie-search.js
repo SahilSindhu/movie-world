@@ -1,7 +1,6 @@
 import { createRow } from '../common-functionalities/movie-row.js';
 import { getMovieDB } from './getMovieDB.js';
 import { movieQuickView } from '../common-functionalities/movie-popup.js';
-import { insertTemplateMarkup } from '../common-functionalities/markup-templates.js';
 import { getMatchedGenre } from './getMatchedGenre.js';
 
 var querryField = document.querySelector('input');
@@ -14,7 +13,6 @@ var data = getMovieDB();
 var localMovieDb =data[0];
 var localGenreDb = data[1];
 let errorNode = document.querySelector('.error__message');
-insertTemplateMarkup();
 createRow(localMovieDb.filter((ele) => {return Math.floor(ele.vote_average/2) >= rating}),0,localGenreDb);
 
 document.querySelectorAll('.menu__item ').forEach(item => item.classList.toggle('menu__item--active'))
@@ -33,26 +31,10 @@ function filterMovieData(){
         
         createRow(filtererdData,0,localGenreDb,errorNode); 
        
-        // if(!filtererdData.length){
-        //     document.querySelector('.error__message').classList.remove('error__hide');
-        // }else{
-        //     if(!document.querySelector('.error__message').classList.contains('error__hide'))
-        //         document.querySelector('.error__message').classList.add('error__hide');
-        // }
-        
     }
     else{
         let filtererdData = localMovieDb.filter((ele) => {return Math.floor(ele.vote_average/2) >= rating})
-        
         createRow(filtererdData,0,localGenreDb,errorNode); 
-    
-        // if(!filtererdData.length){
-        //     document.querySelector('.error__message').classList.remove('error__hide');
-        // }else{
-        //     if(!document.querySelector('.error__message').classList.contains('error__hide'))
-        //         document.querySelector('.error__message').classList.add('error__hide');
-        // }
-        
     }
       
     

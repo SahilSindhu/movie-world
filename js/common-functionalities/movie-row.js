@@ -34,10 +34,10 @@ export function createRow(rowData,idx,genre,errorNode){
 function  createMovieCard(singleMovie,idx,movieGenreName){
   
     let rating = Math.floor(singleMovie.vote_average/2);
-   
-    let single_card_markup =cardMarkup(singleMovie.title,rating,movieGenreName,`${POSTER_PATH_PREFIX}/${singleMovie.backdrop_path}`,singleMovie.id);
+    let movieImg = `${POSTER_PATH_PREFIX}/${singleMovie.backdrop_path}`
+    let single_card_markup =cardMarkup(singleMovie.title,rating,movieGenreName,movieImg,singleMovie.id);
     
-    home_page_movie_rows[idx].insertAdjacentElement('beforeend',single_card_markup);
+    home_page_movie_rows[idx].insertAdjacentHTML('beforeend',single_card_markup);
 
 }
 

@@ -12,14 +12,14 @@ first styling for mobile devices
 }
 
 .movie__list{
-        display: flex;
+        /* display: flex;
         justify-content: center;
-        flex-wrap: wrap;
+        flex-wrap: wrap; */
 }
 
 .movie-card{
-        width: 100%;
-        justify-content: space-around;
+        /* width: 100%; */
+        /* justify-content: space-around; */
         border: 1px solid lightgrey;
         margin-bottom: 30px;
         -webkit-transition:width 0.6s,box-shadow 0.6s;
@@ -118,10 +118,10 @@ first styling for mobile devices
 */
 @media screen and (min-width:480px){
     .movie__list{
-        justify-content: space-between;
+      /* //  justify-content: space-between; */
     }
     .movie-card{
-        width: 40%;
+        /* width: 40%; */
     }
     .movie__row__heading{
         background: transparent;
@@ -136,12 +136,14 @@ first styling for mobile devices
 */
 @media screen and (min-width:768px){
     .movie__list{
-        justify-content: space-between;
+        /* justify-content: space-between; */
     }
     .movie-card{
-        width: 40%;
+            margin: 0 10px;
+        /* width: 40%;
+        
         min-width: 150px;
-        margin-top:0;
+        margin-top:0; */
     }
     .star-rating{
         font-size: 16px ;
@@ -157,8 +159,8 @@ first styling for mobile devices
 
 @media screen and (min-width:992px){
         .movie-card{
-                width: 23%;
-                min-width: 150px;
+                /* width: 23%;
+                min-width: 150px; */
                 margin-top:0;
             }   
 }

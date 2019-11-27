@@ -3,7 +3,7 @@ import { createRow } from './common-functionalities/movie-row.js';
 import { movieQuickView } from './common-functionalities/movie-popup.js';
 import {apiUrls} from './common-functionalities/constants/api-urls.js';
 import { allData } from './common-functionalities/constants/allData.js';
-import { insertTemplateMarkup } from './common-functionalities/markup-templates.js';
+import { addCrousel } from './common-functionalities/crousel.js';
 /*
     fetch data for latest,trending and mostwatched movies to create home page
                     :: consumes -- api urls;, fetch fucntions, and then call the 
@@ -24,7 +24,7 @@ import { insertTemplateMarkup } from './common-functionalities/markup-templates.
                 .then((values)=>
                 {
                     for(let i=1;i<=values.length-1;i++){
-                        createRow(values[i].results.slice(0,4),i-1,genreData[0].genres);
+                        createRow(values[i].results,i-1,genreData[0].genres);
 
                         allData.push(values[i].results);
                         if(allData.length == '3'){
@@ -32,11 +32,10 @@ import { insertTemplateMarkup } from './common-functionalities/markup-templates.
                             localStorage.setItem('localGenreDb',JSON.stringify(genreData[0].genres));
                         }
                     }
+                    addCrousel();
                 })
-
-    
-    insertTemplateMarkup();
     movieQuickView.addMovieEventListener();
+    
 })();
 
 

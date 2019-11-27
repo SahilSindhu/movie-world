@@ -4,6 +4,83 @@
 @import './reset.css';
 @import './header.css';
 
+/* 
+styling for creating a row of movie cards
+first styling for mobile devices
+*/
+
+.movie__list{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.movie-card{
+  width: 100%; 
+   justify-content: space-around;
+}
+
+
+
+
+/* 
+movie row styling for midium size devices
+*/
+@media screen and (min-width:480px){
+.movie__list{
+ justify-content: space-between;
+}
+.movie-card{
+  width: 40%;
+}
+}
+
+/* 
+movie row styling for large size devices
+*/
+@media screen and (min-width:768px){
+.movie__list{
+  justify-content: space-between; 
+}
+.movie-card{
+ width: 40%;
+  min-width: 150px;
+  margin-top:0; 
+}
+
+
+}
+
+@media screen and (min-width:992px){
+  .movie-card{
+          width: 23%;
+          min-width: 150px; 
+          margin-top:0;
+      }   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .search-main{
     width: 85%;
     margin : 30px auto;
@@ -176,5 +253,24 @@ option {
 @media screen and (min-width:768px){
   .search__form{
     flex-direction: row;
+  }
+}
+@media screen and (max-width:768px){
+  .search-main{
+    width: 100%;
+
+  }
+  .search__container{
+    width: 90%;
+    margin: auto;
+  }
+  .search__box{
+    width: 74%;
+  }
+  .range__container{
+    width: 90%;
+  }
+  .range__container label{
+    display: none;
   }
 }

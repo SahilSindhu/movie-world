@@ -1,56 +1,24 @@
 import {ratingStarTemplate} from './rating-star.js';
-
-function cardMarkup(moviename,movierating,moviegenre,movieimg,movieId) {
-    
-    let template = document.getElementById("latest-movies");
-    let movieCard = template.content.querySelector(".movie-card");
-    let node = document.importNode(movieCard, true);
-
-    let figure = node.querySelector('.movie__figure__poster');
-    let title = node.querySelector('.movie__name');
-    let genre = node.querySelector('.movie__genre');
-    let show_more_link = node.querySelector('.movie__showmore-link a');
-
-    figure.setAttribute("src", movieimg);
-    figure.setAttribute("alt", moviename);
-    figure.setAttribute("title", moviename);
-    figure.setAttribute("data-movie-id",movieId);
-    show_more_link.setAttribute('href',`movie-details.html?id=${movieId}`);
-    title.appendChild(document.createTextNode(moviename));
-    
-    genre.appendChild(document.createTextNode(moviegenre.join(',')));
-  
-    const ratingNode = node.querySelector('.movie__ratingStars span');
-   
-
-
-    ratingNode.innerHTML = ratingStarTemplate(movierating);
-     return node;
+export function cardMarkup(moviename,movierating,moviegenre,movieimg,movieId) {
+    return `<section class='movie-card'>
+                        <figure  class='movie__figure'>
+                            <img class='movie__figure__poster' alt=${moviename} title=${moviename} data-movie-id=${movieId} src=${movieimg || null}>
+                        </figure>
+                        <div class='movie-details'>
+                            <div class="details__content details__header">
+                                <p class='movie__name'>${moviename}</p>
+                                <span class='movie__heart'><i class='fa fa-heart'></i></span>
+                            </div>
+                            <div class="details__content details__body">
+                                <p class='movie__genre'>${moviegenre.join(',')}</p>
+                                
+                            </div>
+                            <div class="details__content details__footer">
+                                    <p class="movie__ratingStars">
+                                            <span>${ratingStarTemplate(movierating)}</span>
+                                    </p>
+                                <p class='movie__showmore-link'><a href='movie-details.html?id=${movieId}'>show more</a></p>
+                            </div>
+                        </div>
+            </section>`
 }
-
-function addHeader() {
-    const link = document.querySelector('link#header').import;
-    const header = link.querySelector("header");
-    document.querySelector(".header__container").appendChild(header);
-}
-function addPopup() {
-    const link = document.querySelector('link#popup').import;
-    const popup = link.querySelector("#movie__modal");
-    document.querySelector(".popup__template").appendChild(popup);
-}
-function addCardTemplate() {
-    const link = document.querySelector('link#card__template').import;
-    const card = link.querySelector("#latest-movies");
-    document.querySelector(".card__template").appendChild(card);
-}
-
-function insertTemplateMarkup() {
-    if(document.querySelector(".header__container"))
-                                        addHeader();
-    if(document.querySelector(".popup__template"))
-                                        addPopup();
-    if(document.querySelector(".card__template"))
-                                        addCardTemplate();
-}
-
-export {cardMarkup,insertTemplateMarkup}
