@@ -6,7 +6,8 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
-    padding : 20px;
+
+    padding : 21px;
     flex-direction: column;
 }
 .actor__banner{
